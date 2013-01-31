@@ -12,7 +12,7 @@ been downloaden from the app store. This means that the required content is incl
 
 ## How to use this
 
-Include the EVURLCache.m and .h files in your project
+Include the EVURLCache.m and .h and the Reachability .m and .h files in your project
 Add the following import to your AppDelegate.m : #import "EVURLCache.h"
 Add the following line to the AppDelegate didFinishLaunchingWithOptions : [EVURLCache activate];
 
