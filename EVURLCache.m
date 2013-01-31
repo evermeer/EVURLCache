@@ -8,6 +8,7 @@
 #import "EVURLCache.h"
 #import <sys/stat.h>
 #include <sys/xattr.h>
+#include "Reachability.m"
 
 static NSString* _cacheDirectory;
 static NSString* _preCacheDirectory;
@@ -47,7 +48,7 @@ static NSString* _preCacheDirectory;
     CacheDebugLog(@"CACHE REQUEST %@", request);
     
     // is caching allowed
-    if ((request.cachePolicy == NSURLCacheStorageNotAllowed || [request.URL.absoluteString hasPrefix:@"file://"] || [request.URL.absoluteString hasPrefix:@"data:"]) && [Functions networkAvailable]) {
+    if ((request.cachePolicy == NSURLCacheStorageNotAllowed || [request.URL.absoluteString hasPrefix:@"file://"] || [request.URL.absoluteString hasPrefix:@"data:"]) && [EVURLCache networkAvailable]) {
 		CacheDebugLog(@"CACHE not allowed for %@", request.URL);
 		return nil;
     }
@@ -60,7 +61,7 @@ static NSString* _preCacheDirectory;
     if ([[NSFileManager defaultManager] fileExistsAtPath:storagePath]) {
 		CacheDebugLog(@"CACHE found for %@", storagePath);
         
-        if ([Functions networkAvailable]) {
+        if ([EVURLCache networkAvailable]) {
             // Max cache age for request
             NSString *maxAge = [request valueForHTTPHeaderField:URLCACHE_EXPIRATION_AGE_KEY];
             if (maxAge == nil || [maxAge floatValue] == 0) {
@@ -174,5 +175,13 @@ static NSString* _preCacheDirectory;
     return result == 0;
 }
 
++(BOOL)networkAvailable{
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus internetStatus = [reachability currentReachabilityStatus];
+    if (internetStatus != NotReachable) {
+        return TRUE;
+    }
+    return FALSE;
+}
 @end
 
