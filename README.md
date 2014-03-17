@@ -16,7 +16,7 @@ Include the EVURLCache.m and .h and the Reachability .m and .h files in your pro
 Add the following import to your AppDelegate.m : #import "EVURLCache.h"
 Add the following line to the AppDelegate didFinishLaunchingWithOptions : [EVURLCache activate];
 
-## Optional functionality
+## Extra functionality
 
 Since all files will be cached, you do not have to handle incoming data yourself.
 You can do a NSURLRequest and then in the connectionDidFinishLoading you can use the file from 
