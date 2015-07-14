@@ -43,6 +43,10 @@ from the web (Like AFNetworking). It also works for every request in a UIWebview
 Downloaded files will be completely in memory before they are written to disk. Because of this large 
 files will not be cached. The maximum file size can be influenced by setting the MAX_FILE_SIZE in the EVURLCache.h
 
+## Debugging
+
+If you are having problems setting EVURLCache up, then enable logging. You can do that by enabeling line 32 of EVURLCache.h. It's the line that says: //#define CACHE_DEBUG_MODE
+
 ## Possible future improvements
 
 Ideas for people who might want to hack on this:
