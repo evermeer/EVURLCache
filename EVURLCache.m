@@ -8,7 +8,7 @@
 #import "EVURLCache.h"
 #import <sys/stat.h>
 #include <sys/xattr.h>
-#include "Reachability.m"
+#include "Reachability.h"
 
 static NSString* _cacheDirectory;
 static NSString* _preCacheDirectory;
