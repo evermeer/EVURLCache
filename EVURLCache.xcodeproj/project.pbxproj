@@ -14,6 +14,7 @@
 		7F4A0D591BEE481400059923 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F4A0D571BEE481400059923 /* LaunchScreen.storyboard */; };
 		7F4A0D621BEE497100059923 /* EVURLCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4A0D611BEE497100059923 /* EVURLCache.swift */; };
 		7F4A0D6B1BEFE4F400059923 /* PreCache in Resources */ = {isa = PBXBuildFile; fileRef = 7F4A0D6A1BEFE4F400059923 /* PreCache */; };
+		7F4A41D71BF1F5BF00969D1F /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 7F4A41D61BF1F5BF00969D1F /* .gitattributes */; };
 		C6963680666F6F39E8889141 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EE26FC72733C70FFA7F10C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		7F4A0D6C1BF1D4C200059923 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7F4A0D6D1BF1D4EE00059923 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7F4A0D6E1BF1D4EE00059923 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		7F4A41D61BF1F5BF00969D1F /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				7F4A0D6C1BF1D4C200059923 /* README.md */,
 				7F4A0D6D1BF1D4EE00059923 /* .gitignore */,
+				7F4A41D61BF1F5BF00969D1F /* .gitattributes */,
 				7F4A0D6E1BF1D4EE00059923 /* .travis.yml */,
 				7F4A0D651BEF9F0700059923 /* circle.yml */,
 				7F4A0D671BEF9F0700059923 /* EVURLCache.podspec */,
@@ -177,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F4A41D71BF1F5BF00969D1F /* .gitattributes in Resources */,
 				7F4A0D591BEE481400059923 /* LaunchScreen.storyboard in Resources */,
 				7F4A0D561BEE481400059923 /* Assets.xcassets in Resources */,
 				7F4A0D541BEE481400059923 /* Main.storyboard in Resources */,
