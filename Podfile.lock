@@ -1,0 +1,19 @@
+PODS:
+  - ReachabilitySwift (2.1)
+
+DEPENDENCIES:
+  - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
+
+EXTERNAL SOURCES:
+  ReachabilitySwift:
+    :git: https://github.com/ashleymills/Reachability.swift
+
+CHECKOUT OPTIONS:
+  ReachabilitySwift:
+    :commit: 89b2431fe262bc5915972472e36d04c067f686bc
+    :git: https://github.com/ashleymills/Reachability.swift
+
+SPEC CHECKSUMS:
+  ReachabilitySwift: 99bb7acceebb90b2048b4a8fd6539be96454dcb2
+
+COCOAPODS: 0.39.0
