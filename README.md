@@ -106,35 +106,17 @@ import EVURLCache
 
 If you want support for older versions than iOS 8.0, then you can also just copy the EVURLCache.swift plus the [ReachabilitySwift.swift](https://github.com/ashleymills/Reachability.swift) to your app.
 
-## Building the AppMessage demo
+## Building the EVURLCache demo
 
 1) Clone the repo to a working directory
 
-2) [CocoaPods](http://cocoapods.org) is used to manage dependencies. Pods are setup easily and are distributed via a ruby gem. Follow the simple instructions on the website to setup. After setup, run the following command from the toplevel directory of AppMessage to download the dependencies for AppMessage:
+2) [CocoaPods](http://cocoapods.org) is used to manage dependencies. Pods are setup easily and are distributed via a ruby gem. Follow the simple instructions on the website to setup. After setup, run the following command from the toplevel directory of EVURLCache to download the dependencies for EVURLCache:
 
 ```sh
 pod install
 ```
 
-3) Open the `AppMessage.xcworkspace` in Xcode.
-
-4) Go to AppMessage target settings and update the:
-
-- bundle name (usually your own reversed domain)
-- Change the team settings (your own certificate that is enabled for push notifications)
-- fix the iCloud capabilities. (check key-value store and CloudKit with a default container)
-- fix the capabilities for Background Modes 'Background fetch' and 'Remote notifications'
-
-5) Build and Run the app. In the AppDelegate there is a call to initiate all objects (createRecordTypes). All required CloudKit objects will be created.
-
-6) Open the CloudKit dashboard, select all recordtypes and enable all 'Metadata Indexes'
-
-7) Disable the call to .createRecordTypes in AppDelegate and run the app again.
-
-8) Make sure you run the app on 2 devices, each using a diverent iCloud account and each device having the other account in it's contact list.
-
-
-and you are ready to go!
+3) Open the `EVURLCache.xcworkspace` in Xcode and run the app.
 
 
 ## License
