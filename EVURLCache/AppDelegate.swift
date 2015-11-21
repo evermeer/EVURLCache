@@ -15,11 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
         
-        EVURLCache.LOGGING = true // We want to see all caching actions
-        EVURLCache.MAX_FILE_SIZE = 26 // We want more than the default: 2^26 = 64MB
-        EVURLCache.MAX_CACHE_SIZE = 30 // We want more than the default: 2^30 = 1GB
+        // We want to see all caching actions
+        EVURLCache.LOGGING = true
+        // We want more than the default: 2^26 = 64MB
+        EVURLCache.MAX_FILE_SIZE = 26
+        // We want more than the default: 2^30 = 1GB
+        EVURLCache.MAX_CACHE_SIZE = 30
         EVURLCache.activate()
         
         return true
