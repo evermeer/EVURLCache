@@ -155,7 +155,7 @@ public class EVURLCache : NSURLCache {
         if let cacheKey = request.valueForHTTPHeaderField(URLCACHE_CACHE_KEY) {
             localUrl = "\(rootPath)/\(host)/\(cacheKey)"
         } else {
-            if let path = request.URL?.relativePath?.lowercaseString {
+            if let path = request.URL?.relativePath {
                 localUrl = "\(rootPath)/\(host)\(path)"
             }
         }
