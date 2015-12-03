@@ -8,6 +8,7 @@
 
 import Foundation
 import ReachabilitySwift
+import MobileCoreServices
 
 public class EVURLCache : NSURLCache {
     
@@ -19,10 +20,11 @@ public class EVURLCache : NSURLCache {
     public static var MAX_FILE_SIZE = 24 // The maximum file size that will be cached (2^24 = 16MB)
     public static var MAX_CACHE_SIZE = 30 // The maximum file size that will be cached (2^30 = 256MB)
     public static var LOGGING = false // Set this to true to see all caching action in the output log
-    
+    public static var FORCE_LOWERCASE = true // Set this to false if you want to use case insensitive filename compare
     public static var _cacheDirectory: String!
     public static var _preCacheDirectory: String!
 
+    // Activate EVURLCache
     public class func activate() {
         // set caching paths
         _cacheDirectory = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]).URLByAppendingPathComponent(CACHE_FOLDER).absoluteString
@@ -33,13 +35,14 @@ public class EVURLCache : NSURLCache {
         NSURLCache.setSharedURLCache(urlCache)
     }
     
+    // Output log messages if logging is enabled
     private static func debugLog(message: String) {
         if LOGGING {
             NSLog(message)            
         }
     }
     
-    
+    // Will be called by a NSURLConnection when it's wants to know if there is something in the cache.
     public override func cachedResponseForRequest(request: NSURLRequest) -> NSCachedURLResponse? {
         // is caching allowed
         if ((request.cachePolicy == NSURLRequestCachePolicy.ReloadIgnoringCacheData || request.URL!.absoluteString.hasPrefix("file://") || request.URL!.absoluteString.hasPrefix("data:")) && EVURLCache.networkAvailable()) {
@@ -77,17 +80,32 @@ public class EVURLCache : NSURLCache {
             } catch {}
         }
         
+        
         // Return the cache response
         if let content:NSData = NSData(contentsOfFile: storagePath) {
-            let response = NSURLResponse(URL: request.URL!, MIMEType: "text/html", expectedContentLength: content.length, textEncodingName: nil)
-            EVURLCache.debugLog("CACHE returning cache response from \(storagePath)");
+            let mimeType = getMimeType(storagePath)
+            let response = NSURLResponse(URL: request.URL!, MIMEType: mimeType, expectedContentLength: content.length, textEncodingName: nil)
+            EVURLCache.debugLog("CACHE returning cache response: mimeType = \(mimeType), path = \(storagePath)");
             return NSCachedURLResponse(response: response, data: content)
         }
         EVURLCache.debugLog("CACHE could not be read from \(storagePath)");
         return nil
     }
     
+    // Make sure the correct mimetype is returned from the cache
+    private func getMimeType(path: String) -> String {
+        var mimeType = "text/html"
+        if let fileExtension: String = path.componentsSeparatedByString(".").last {
+            if let uti: CFString = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, fileExtension as NSString, nil)?.takeRetainedValue() {
+                if let type = UTTypeCopyPreferredTagWithClass(uti, kUTTagClassMIMEType)?.takeRetainedValue() {
+                    mimeType = type as String
+                }
+            }
+        }
+        return mimeType
+    }
     
+    // Will be called by NSURLConnection when a request is complete.
     public override func storeCachedResponse(cachedResponse: NSCachedURLResponse, forRequest request: NSURLRequest) {
         if let httpResponse = cachedResponse.response as? NSHTTPURLResponse {
             if httpResponse.statusCode >= 400 {
@@ -109,12 +127,8 @@ public class EVURLCache : NSURLCache {
         
         // create storrage folder
         let storagePath: String = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._cacheDirectory)
-        if var storageDirectory: String = NSURL(fileURLWithPath: "\(storagePath)").URLByDeletingLastPathComponent?.absoluteString {
+        if let storageDirectory: String = NSURL(fileURLWithPath: "\(storagePath)").URLByDeletingLastPathComponent?.absoluteString {
             do {
-                if storageDirectory.hasPrefix("file:/") {
-                    storageDirectory = storageDirectory.substringFromIndex(storageDirectory.startIndex.advancedBy(5))
-                }
-                
                 try NSFileManager.defaultManager().createDirectoryAtPath(storageDirectory, withIntermediateDirectories: true, attributes: nil)
             } catch let error as NSError {
                 EVURLCache.debugLog("Error creating cache directory \(storageDirectory)");
@@ -148,22 +162,37 @@ public class EVURLCache : NSURLCache {
         return storagePath;
     }
 
-    
+    // build up the complete storrage path for a request plus root folder.
     public static func storagePathForRequest(request: NSURLRequest, rootPath: String) -> String {        
         var localUrl: String!
         let host: String = request.URL?.host ?? "default"
+        
+        // The filename could be forced by the remote server. This could be used to force multiple url's to the same cache file
         if let cacheKey = request.valueForHTTPHeaderField(URLCACHE_CACHE_KEY) {
-            localUrl = "\(rootPath)/\(host)/\(cacheKey)"
+            localUrl = "\(host)/\(cacheKey)"
         } else {
             if let path = request.URL?.relativePath {
-                localUrl = "\(rootPath)/\(host)\(path)"
+                localUrl = "\(host)\(path)"
+            } else {
+                NSLog("WARNING: Unable to get the path from the request: \(request)")
             }
         }
+        
+        // Without an extension it's treated as a folder and the file will be called index.html
         if let storageFile: String = localUrl.componentsSeparatedByString("/").last {
             if !storageFile.containsString(".")  {
-                localUrl = "\(localUrl)index.html"
+                localUrl = "/\(localUrl)index.html"
             }
         }
+
+        // Force case insensitive compare (OSX filesystem can be case sensitive)
+        if FORCE_LOWERCASE {
+            localUrl = "\(rootPath)/\(localUrl.lowercaseString)"
+        } else {
+            localUrl = "\(rootPath)/\(localUrl)"
+        }
+        
+        // Cleanup
         if localUrl.hasPrefix("file:/") {
             localUrl = localUrl.substringFromIndex(localUrl.startIndex.advancedBy(5))
         }
@@ -172,6 +201,7 @@ public class EVURLCache : NSURLCache {
         return localUrl
     }
     
+    // You don't want your cache to be backed up.
     public static func addSkipBackupAttributeToItemAtURL(url: NSURL) -> Bool {
         let bufLength = getxattr(url.absoluteString, "com.apple.MobileBackup", nil, 0, 0, 0)
         if bufLength == -1 {
@@ -196,6 +226,7 @@ public class EVURLCache : NSURLCache {
         return false
     }
     
+    // Check if we have a network connection
     private static func networkAvailable() -> Bool {
         let reachability: Reachability
         do {
