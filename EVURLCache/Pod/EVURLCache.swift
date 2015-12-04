@@ -8,7 +8,12 @@
 
 import Foundation
 import ReachabilitySwift
-import MobileCoreServices
+
+#if os(iOS)
+    import MobileCoreServices
+#elseif os(OSX)
+    import CoreServices
+#endif
 
 public class EVURLCache : NSURLCache {
     

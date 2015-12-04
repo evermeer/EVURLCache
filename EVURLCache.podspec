@@ -78,7 +78,8 @@ s.source_files  = 'EVURLCache/Pod/*'
 #  the lib prefix of their name.
 #
 
-s.frameworks = "Foundation"
+s.frameworks.ios = "Foundation", "MobileCoreServices"
+s.frameworks.osx = "Foundation", "CoreServices"
 
 # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 #
