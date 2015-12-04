@@ -42,14 +42,16 @@ s.social_media_url   = "http://twitter.com/evermeer"
 #  If this Pod runs only on iOS or OS X, then specify the platform and
 #  the deployment target. You can optionally include the target after the platform.
 #
-# s.platform     = :ios, "8.0"
+s.ios.platform = :ios, "9.0"
+s.osx.platform = :osx, "10.11"
+
 
 # ――― Deployment targets ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 #
 #  Specify the minimum deployment target
 #
-s.ios.deployment_target = '8.0'
-s.osx.deployment_target = '10.9'
+s.ios.deployment_target = "8.0"
+s.osx.deployment_target = "10.9"
 #s.watchos.deployment_target = '2.0'
 #s.tvos.deployment_target = '9.0'
 
@@ -78,8 +80,8 @@ s.source_files  = 'EVURLCache/Pod/*'
 #  the lib prefix of their name.
 #
 
-s.frameworks.ios = "Foundation", "MobileCoreServices"
-s.frameworks.osx = "Foundation", "CoreServices"
+s.ios.frameworks = "Foundation", "MobileCoreServices"
+s.osx.frameworks = "Foundation", "CoreServices"
 
 # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 #

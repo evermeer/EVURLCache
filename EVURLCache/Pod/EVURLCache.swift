@@ -245,7 +245,6 @@ public class EVURLCache : NSURLCache {
             return false
         }
     }
-    
 }
 
 

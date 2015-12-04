@@ -15,6 +15,8 @@
 		7F4A0D621BEE497100059923 /* EVURLCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4A0D611BEE497100059923 /* EVURLCache.swift */; };
 		7F4A0D6B1BEFE4F400059923 /* PreCache in Resources */ = {isa = PBXBuildFile; fileRef = 7F4A0D6A1BEFE4F400059923 /* PreCache */; };
 		7F4A41D71BF1F5BF00969D1F /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 7F4A41D61BF1F5BF00969D1F /* .gitattributes */; };
+		7F4E25AD1C11A5C6009494A8 /* OSXcompileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E25AC1C11A5C6009494A8 /* OSXcompileTest.swift */; };
+		7F4E25B21C11A5D0009494A8 /* EVURLCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4A0D611BEE497100059923 /* EVURLCache.swift */; };
 		C6963680666F6F39E8889141 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EE26FC72733C70FFA7F10C /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,12 +34,15 @@
 		7F4A0D611BEE497100059923 /* EVURLCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EVURLCache.swift; path = Pod/EVURLCache.swift; sourceTree = "<group>"; };
 		7F4A0D671BEF9F0700059923 /* EVURLCache.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = EVURLCache.podspec; sourceTree = "<group>"; };
 		7F4A0D681BEF9F0700059923 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		7F4A0D691BEFA0EB00059923 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		7F4A0D691BEFA0EB00059923 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7F4A0D6A1BEFE4F400059923 /* PreCache */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PreCache; sourceTree = "<group>"; };
 		7F4A0D6C1BF1D4C200059923 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7F4A0D6D1BF1D4EE00059923 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7F4A0D6E1BF1D4EE00059923 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		7F4A41D61BF1F5BF00969D1F /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		7F4E25AA1C11A5C6009494A8 /* OSXcompileTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXcompileTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F4E25AC1C11A5C6009494A8 /* OSXcompileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSXcompileTest.swift; sourceTree = "<group>"; };
+		7F4E25AE1C11A5C6009494A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +51,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6963680666F6F39E8889141 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F4E25A71C11A5C6009494A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +93,7 @@
 				7F4A0D691BEFA0EB00059923 /* Podfile */,
 				7F4A0D6A1BEFE4F400059923 /* PreCache */,
 				7F4A0D4D1BEE481400059923 /* EVURLCache */,
+				7F4E25AB1C11A5C6009494A8 /* OSXcompileTest */,
 				7F4A0D4C1BEE481400059923 /* Products */,
 				5592D8A256F42507506CAD07 /* Pods */,
 				19413DFDF2B04B13ECBD1B5F /* Frameworks */,
@@ -91,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				7F4A0D4B1BEE481400059923 /* EVURLCache.app */,
+				7F4E25AA1C11A5C6009494A8 /* OSXcompileTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +131,15 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
+		7F4E25AB1C11A5C6009494A8 /* OSXcompileTest */ = {
+			isa = PBXGroup;
+			children = (
+				7F4E25AC1C11A5C6009494A8 /* OSXcompileTest.swift */,
+				7F4E25AE1C11A5C6009494A8 /* Info.plist */,
+			);
+			path = OSXcompileTest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +163,23 @@
 			productReference = 7F4A0D4B1BEE481400059923 /* EVURLCache.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7F4E25A91C11A5C6009494A8 /* OSXcompileTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F4E25B11C11A5C6009494A8 /* Build configuration list for PBXNativeTarget "OSXcompileTest" */;
+			buildPhases = (
+				7F4E25A61C11A5C6009494A8 /* Sources */,
+				7F4E25A71C11A5C6009494A8 /* Frameworks */,
+				7F4E25A81C11A5C6009494A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OSXcompileTest;
+			productName = OSXcompileTest;
+			productReference = 7F4E25AA1C11A5C6009494A8 /* OSXcompileTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -152,6 +192,9 @@
 				TargetAttributes = {
 					7F4A0D4A1BEE481400059923 = {
 						CreatedOnToolsVersion = 7.1;
+					};
+					7F4E25A91C11A5C6009494A8 = {
+						CreatedOnToolsVersion = 7.1.1;
 					};
 				};
 			};
@@ -169,6 +212,7 @@
 			projectRoot = "";
 			targets = (
 				7F4A0D4A1BEE481400059923 /* EVURLCache */,
+				7F4E25A91C11A5C6009494A8 /* OSXcompileTest */,
 			);
 		};
 /* End PBXProject section */
@@ -183,6 +227,13 @@
 				7F4A0D561BEE481400059923 /* Assets.xcassets in Resources */,
 				7F4A0D541BEE481400059923 /* Main.storyboard in Resources */,
 				7F4A0D6B1BEFE4F400059923 /* PreCache in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F4E25A81C11A5C6009494A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +295,15 @@
 				7F4A0D511BEE481400059923 /* ViewController.swift in Sources */,
 				7F4A0D621BEE497100059923 /* EVURLCache.swift in Sources */,
 				7F4A0D4F1BEE481400059923 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F4E25A61C11A5C6009494A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F4E25AD1C11A5C6009494A8 /* OSXcompileTest.swift in Sources */,
+				7F4E25B21C11A5D0009494A8 /* EVURLCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +436,34 @@
 			};
 			name = Release;
 		};
+		7F4E25AF1C11A5C6009494A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OSXcompileTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.evict.OSXcompileTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7F4E25B01C11A5C6009494A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = OSXcompileTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.evict.OSXcompileTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -396,6 +484,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7F4E25B11C11A5C6009494A8 /* Build configuration list for PBXNativeTarget "OSXcompileTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F4E25AF1C11A5C6009494A8 /* Debug */,
+				7F4E25B01C11A5C6009494A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
