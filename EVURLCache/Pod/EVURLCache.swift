@@ -114,7 +114,7 @@ public class EVURLCache : NSURLCache {
     public override func storeCachedResponse(cachedResponse: NSCachedURLResponse, forRequest request: NSURLRequest) {
         if let httpResponse = cachedResponse.response as? NSHTTPURLResponse {
             if httpResponse.statusCode >= 400 {
-                EVURLCache.debugLog("CACHE Do not cache error page for : \(request.URL)");
+                EVURLCache.debugLog("CACHE Do not cache error \(httpResponse.statusCode) page for : \(request.URL) \(httpResponse.debugDescription)");
                 return
             }
         }
@@ -189,7 +189,7 @@ public class EVURLCache : NSURLCache {
         // Without an extension it's treated as a folder and the file will be called index.html
         if let storageFile: String = localUrl.componentsSeparatedByString("/").last {
             if !storageFile.containsString(".")  {
-                localUrl = "/\(localUrl)index.html"
+                localUrl = "/\(localUrl)/index.html"
             }
         }
 

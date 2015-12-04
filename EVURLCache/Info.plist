@@ -40,6 +40,11 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>game.zorropk.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
 			<key>evict.nl</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
