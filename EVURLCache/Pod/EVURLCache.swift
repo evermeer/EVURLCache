@@ -45,7 +45,7 @@ public class EVURLCache : NSURLCache {
     // Will be called by a NSURLConnection when it's wants to know if there is something in the cache.
     public override func cachedResponseForRequest(request: NSURLRequest) -> NSCachedURLResponse? {
         // is caching allowed
-        if ((request.cachePolicy == NSURLRequestCachePolicy.ReloadIgnoringCacheData || request.URL!.absoluteString.hasPrefix("file://") || request.URL!.absoluteString.hasPrefix("data:")) && EVURLCache.networkAvailable()) {
+        if ((request.cachePolicy == NSURLRequestCachePolicy.ReloadIgnoringCacheData || request.URL!.absoluteString.hasPrefix("file:/") || request.URL!.absoluteString.hasPrefix("data:")) && EVURLCache.networkAvailable()) {
             EVURLCache.debugLog("CACHE not allowed for \(request.URL)");
             return nil;
         }
@@ -127,8 +127,11 @@ public class EVURLCache : NSURLCache {
         
         // create storrage folder
         let storagePath: String = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._cacheDirectory)
-        if let storageDirectory: String = NSURL(fileURLWithPath: "\(storagePath)").URLByDeletingLastPathComponent?.absoluteString {
+        if var storageDirectory: String = NSURL(fileURLWithPath: "\(storagePath)").URLByDeletingLastPathComponent?.absoluteString {
             do {
+                if storageDirectory.hasPrefix("file:") {
+                    storageDirectory = storageDirectory.substringFromIndex(storageDirectory.startIndex.advancedBy(5))
+                }
                 try NSFileManager.defaultManager().createDirectoryAtPath(storageDirectory, withIntermediateDirectories: true, attributes: nil)
             } catch let error as NSError {
                 EVURLCache.debugLog("Error creating cache directory \(storageDirectory)");
@@ -193,7 +196,7 @@ public class EVURLCache : NSURLCache {
         }
         
         // Cleanup
-        if localUrl.hasPrefix("file:/") {
+        if localUrl.hasPrefix("file:") {
             localUrl = localUrl.substringFromIndex(localUrl.startIndex.advancedBy(5))
         }
         localUrl = localUrl.stringByReplacingOccurrencesOfString("//", withString: "/")
