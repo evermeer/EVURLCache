@@ -40,10 +40,14 @@ public class EVURLCache : NSURLCache {
         NSURLCache.setSharedURLCache(urlCache)
     }
     
-    // Output log messages if logging is enabled
-    private static func debugLog(message: String) {
+    // Log a message with info if enabled
+    public static func debugLog<T>(object: T, filename: String = __FILE__, line: Int = __LINE__, funcname: String = __FUNCTION__) {
         if LOGGING {
-            NSLog(message)            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss:SSS"
+            let process = NSProcessInfo.processInfo()
+            let threadId = "." //NSThread.currentThread().threadDictionary
+            NSLog("\(dateFormatter.stringFromDate(NSDate())) \(process.processName))[\(process.processIdentifier):\(threadId)] \((filename as NSString).lastPathComponent)(\(line)) \(funcname):\r\t\(object)\n")
         }
     }
     
@@ -209,27 +213,12 @@ public class EVURLCache : NSURLCache {
         return localUrl
     }
     
-    // You don't want your cache to be backed up.
     public static func addSkipBackupAttributeToItemAtURL(url: NSURL) -> Bool {
-        let bufLength = getxattr(url.absoluteString, "com.apple.MobileBackup", nil, 0, 0, 0)
-        if bufLength == -1 {
-            return false
-        } else {
-            let buf = malloc(bufLength)
-            let result = getxattr(url.absoluteString, "com.apple.MobileBackup", buf, bufLength, 0, 0)
-            if result == -1 {
-               return false
-            }
-            let removeResult = removexattr(url.absoluteString, "com.apple.MobileBackup", 0)
-            if removeResult == 0 {
-                debugLog("Removed extended attribute on file \(url)")
-            }
-        }
         do {
             try url.setResourceValue(NSNumber(bool: true), forKey: NSURLIsExcludedFromBackupKey)
             return true
-        } catch {
-            debugLog("Unable to set SkipBackupAttributeToItemAtURL")
+        } catch _ as NSError {
+            debugLog("ERROR: Could not set 'exclude from backup' attribute for file \(url.absoluteString)")
         }
         return false
     }
