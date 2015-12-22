@@ -99,15 +99,11 @@ public class EVURLCache : NSURLCache {
             } catch {}
         }
         
-        
-        // Return the cache response
-        if let content:NSData = NSData(contentsOfFile: storagePath) {
-            let mimeType = getMimeType(storagePath)
-            let response = NSURLResponse(URL: request.URL!, MIMEType: mimeType, expectedContentLength: content.length, textEncodingName: nil)
-            EVURLCache.debugLog("CACHE returning cache response: mimeType = \(mimeType), path = \(storagePath)");
-            return NSCachedURLResponse(response: response, data: content)
+        // Read object from file
+        if let response = NSKeyedUnarchiver.unarchiveObjectWithFile(storagePath) as? NSCachedURLResponse {
+            EVURLCache.debugLog("Returning cached data from \(storagePath)");
+            return response
         }
-        EVURLCache.debugLog("CACHE could not be read from \(storagePath)");
         return nil
     }
     
@@ -160,7 +156,7 @@ public class EVURLCache : NSURLCache {
         
         // save file
         EVURLCache.debugLog("Writing data to \(storagePath)");
-        if !cachedResponse.data.writeToFile(storagePath, atomically: true) {
+        if !NSKeyedArchiver.archiveRootObject(cachedResponse, toFile: storagePath) {
             EVURLCache.debugLog("Could not write file to cache");
         } else {
             EVURLCache.debugLog("CACHE save file to Cache  : \(storagePath)");
