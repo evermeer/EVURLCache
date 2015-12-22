@@ -106,20 +106,7 @@ public class EVURLCache : NSURLCache {
         }
         return nil
     }
-    
-    // Make sure the correct mimetype is returned from the cache
-    private func getMimeType(path: String) -> String {
-        var mimeType = "text/html"
-        if let fileExtension: String = path.componentsSeparatedByString(".").last {
-            if let uti: CFString = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, fileExtension as NSString, nil)?.takeRetainedValue() {
-                if let type = UTTypeCopyPreferredTagWithClass(uti, kUTTagClassMIMEType)?.takeRetainedValue() {
-                    mimeType = type as String
-                }
-            }
-        }
-        return mimeType
-    }
-    
+        
     // Will be called by NSURLConnection when a request is complete.
     public override func storeCachedResponse(cachedResponse: NSCachedURLResponse, forRequest request: NSURLRequest) {
         if let httpResponse = cachedResponse.response as? NSHTTPURLResponse {
