@@ -16,7 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        if let url = NSURL(string: "http://game.zorropk.com/gamenow/xiao5haiyanglixianji/") {
+        // An other nice test url is: http://game.zorropk.com/gamenow/xiao5haiyanglixianji/
+        if let url = NSURL(string: "http://evict.nl") {
             webView.loadRequest(NSURLRequest(URL: url))
         }
     }
