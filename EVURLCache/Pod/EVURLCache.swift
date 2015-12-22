@@ -53,6 +53,16 @@ public class EVURLCache : NSURLCache {
     
     // Will be called by a NSURLConnection when it's wants to know if there is something in the cache.
     public override func cachedResponseForRequest(request: NSURLRequest) -> NSCachedURLResponse? {
+        guard let _ = request.URL else {
+            EVURLCache.debugLog("CACHE not allowed for nil URLs");
+            return nil
+        }
+        
+        if request.URL!.absoluteString.isEmpty {
+            EVURLCache.debugLog("CACHE not allowed for empty URLs");
+            return nil;
+        }
+        
         // is caching allowed
         if ((request.cachePolicy == NSURLRequestCachePolicy.ReloadIgnoringCacheData || request.URL!.absoluteString.hasPrefix("file:/") || request.URL!.absoluteString.hasPrefix("data:")) && EVURLCache.networkAvailable()) {
             EVURLCache.debugLog("CACHE not allowed for \(request.URL)");
