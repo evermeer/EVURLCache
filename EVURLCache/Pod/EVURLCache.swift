@@ -129,7 +129,7 @@ public class EVURLCache : NSURLCache {
         
         // create storrage folder
         let storagePath: String = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._cacheDirectory)
-        if var storageDirectory: String = NSURL(fileURLWithPath: "\(storagePath)").URLByDeletingLastPathComponent?.absoluteString {
+        if var storageDirectory: String = NSURL(fileURLWithPath: "\(storagePath)").URLByDeletingLastPathComponent?.absoluteString.stringByRemovingPercentEncoding {
             do {
                 if storageDirectory.hasPrefix("file:") {
                     storageDirectory = storageDirectory.substringFromIndex(storageDirectory.startIndex.advancedBy(5))
