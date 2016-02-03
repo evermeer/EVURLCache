@@ -16,8 +16,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // An other nice test url is: http://game.zorropk.com/gamenow/xiao5haiyanglixianji/
+        // Uncomment the 2 lines below and comment the line below that to see an other nice test
+//        EVURLCache.RECREATE_CACHE_RESPONSE = false
+//        if let url = NSURL(string: "http://game.zorropk.com/gamenow/xiao5haiyanglixianji/") {
         if let url = NSURL(string: "http://evict.nl") {
+            NSLog("navigating to \(url)")
             webView.loadRequest(NSURLRequest(URL: url))
         }
     }

@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         EVURLCache.FORCE_LOWERCASE = true // is already the default. You also have to put all files int he PreCache using lowercase names
         // Now activate this cache
         EVURLCache.activate()
-        
+        NSLog("Cache is now active")
         return true
     }
 

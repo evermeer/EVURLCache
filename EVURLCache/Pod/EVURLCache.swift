@@ -28,7 +28,8 @@ public class EVURLCache : NSURLCache {
     public static var FORCE_LOWERCASE = true // Set this to false if you want to use case insensitive filename compare
     public static var _cacheDirectory: String!
     public static var _preCacheDirectory: String!
-
+    public static var RECREATE_CACHE_RESPONSE = true // There is a difrence between unarchiving and recreating. I have to find out what.
+    
     // Activate EVURLCache
     public class func activate() {
         // set caching paths
@@ -102,7 +103,17 @@ public class EVURLCache : NSURLCache {
         // Read object from file
         if let response = NSKeyedUnarchiver.unarchiveObjectWithFile(storagePath) as? NSCachedURLResponse {
             EVURLCache.debugLog("Returning cached data from \(storagePath)");
+
+            // I have to find out the difrence. For now I will let the developer checkt which version to use
+            if EVURLCache.RECREATE_CACHE_RESPONSE {
+                // This works for most sites, but aperently not for the game as in the alternate url you see in ViewController
+                let r = NSURLResponse(URL: response.response.URL!, MIMEType: response.response.MIMEType, expectedContentLength: response.data.length, textEncodingName: response.response.textEncodingName)
+                return NSCachedURLResponse(response: r, data: response.data, userInfo: response.userInfo, storagePolicy: .Allowed)
+            }
+            // This works for the game, but not for my site.
             return response
+        } else {
+            EVURLCache.debugLog("The file is probably not put in the local path using NSKeyedArchiver \(storagePath)");
         }
         return nil
     }
