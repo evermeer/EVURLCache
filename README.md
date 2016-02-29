@@ -22,7 +22,7 @@
 
 
 ## What is this?
-
+ 
 This is a NSURLCache subclass for handeling all web requests that use NSURLRequest. (This includes UIWebView)
 
 The EVURLCache is meant for handeling the following caching strategies:
