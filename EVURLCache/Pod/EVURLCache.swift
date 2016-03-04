@@ -29,6 +29,7 @@ public class EVURLCache : NSURLCache {
     public static var _cacheDirectory: String!
     public static var _preCacheDirectory: String!
     public static var RECREATE_CACHE_RESPONSE = true // There is a difrence between unarchiving and recreating. I have to find out what.
+    private static var _filter = { _ in return true } as ((request: NSURLRequest) -> Bool)
     
     // Activate EVURLCache
     public class func activate() {
@@ -39,6 +40,10 @@ public class EVURLCache : NSURLCache {
         let urlCache = EVURLCache(memoryCapacity: 1<<MAX_FILE_SIZE, diskCapacity: 1<<MAX_CACHE_SIZE, diskPath: _cacheDirectory)
 
         NSURLCache.setSharedURLCache(urlCache)
+    }
+    
+    public class func filter (filterFor: ((request: NSURLRequest) -> Bool)) {
+        _filter = filterFor
     }
     
     // Log a message with info if enabled
@@ -58,10 +63,15 @@ public class EVURLCache : NSURLCache {
             EVURLCache.debugLog("CACHE not allowed for nil URLs");
             return nil
         }
-        
+
         if url.absoluteString.isEmpty {
             EVURLCache.debugLog("CACHE not allowed for empty URLs");
             return nil;
+        }
+
+        if !EVURLCache._filter(request: request) {
+            EVURLCache.debugLog("CACHE skipped because of filter");
+            return nil
         }
         
         // is caching allowed
@@ -120,6 +130,9 @@ public class EVURLCache : NSURLCache {
         
     // Will be called by NSURLConnection when a request is complete.
     public override func storeCachedResponse(cachedResponse: NSCachedURLResponse, forRequest request: NSURLRequest) {
+        if !EVURLCache._filter(request: request) {
+            return
+        }
         if let httpResponse = cachedResponse.response as? NSHTTPURLResponse {
             if httpResponse.statusCode >= 400 {
                 EVURLCache.debugLog("CACHE Do not cache error \(httpResponse.statusCode) page for : \(request.URL) \(httpResponse.debugDescription)");
