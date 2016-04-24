@@ -1,6 +1,0 @@
-framework module ReachabilitySwift {
-  umbrella header "Pods-OSXcompileTest-ReachabilitySwift-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "EVURLCache"
-s.version      = "2.4.0"
+s.version      = "2.6.0"
 s.summary      = "NSURLCache subclass for handeling all web requests that use NSURLRequest"
 s.description  = "This is a NSURLCache subclass for handeling all web requests that use NSURLRequest. (This includes UIWebView)"
 s.homepage     = "https://github.com/evermeer/EVURLCache"
@@ -91,7 +91,8 @@ s.osx.frameworks = "Foundation", "CoreServices"
 
 s.requires_arc = true
 
-s.dependency "ReachabilitySwift"
+# In cocoapods version 1 ReachabilitySwift does not work as a dependency. For now the file is included in EVURLCache
+#s.dependency "ReachabilitySwift"
 
 
 

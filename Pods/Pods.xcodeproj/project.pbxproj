@@ -7,324 +7,147 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		089834B52544B55D195409CA1BD280E4 /* Pods-EVURLCache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 252B6C83DDD8A41C7362E93113DA8815 /* Pods-EVURLCache-dummy.m */; };
-		1176AFF2BA5DFCBD5B44945D0305F754 /* Pods-EVURLCache-ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1AC1A21B39CBC5422BEEF0CD656855 /* Pods-EVURLCache-ReachabilitySwift-dummy.m */; };
-		1299CC42FC17E5A9C8CA41E21320EB82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F13D955ADC81A7DF4D90BADA06C6AFE /* Foundation.framework */; };
-		1BB60ED1B8F7C373349D68E38B4475DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F13D955ADC81A7DF4D90BADA06C6AFE /* Foundation.framework */; };
-		2489A2B30541EDA877A2F2DA5FA52CD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F13D955ADC81A7DF4D90BADA06C6AFE /* Foundation.framework */; };
-		28F8CCBCD007BCB9EBEEBC4FE81E2222 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F13D955ADC81A7DF4D90BADA06C6AFE /* Foundation.framework */; };
-		3F30E402D08EF59E8FD22D70E5FBF251 /* Pods-ReachabilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E60C93A46BA1586089B7AC94087C35E0 /* Pods-ReachabilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		49616C00D6B6783E7AC5B9B1B6FBB0AF /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B79C3DF7C84EAD04815034B19AD1296 /* Reachability.swift */; };
-		59C3A7B64AE9060705A86057F936E241 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C30708370524E307A49ED2FFEA4FB54 /* Cocoa.framework */; };
-		5F53F0F38519E12212CAACB0BE740B4F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B79C3DF7C84EAD04815034B19AD1296 /* Reachability.swift */; };
-		5F54EEDBCC5C4E57BC91FB5056317D1B /* Pods-OSXcompileTest-ReachabilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 680D42488B922D55110B7719BA3CB4D2 /* Pods-OSXcompileTest-ReachabilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		75365301BF303A10AFCED966336AF44E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3210F99ECF029ECD61C4491340A2625B /* SystemConfiguration.framework */; };
-		775A8A14B74B461D5C09F975FA38532B /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 472D5E497EE51A4EADB5B76DC19AE85F /* Pods-dummy.m */; };
-		797D6D109810DDB6D3E209625AD51254 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C30708370524E307A49ED2FFEA4FB54 /* Cocoa.framework */; };
-		81008473FF6452E6175863987B880E79 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D571D583132C2567E5D45016FA053C6 /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8848C2C36A915C03FE5E1E15B79DFAE8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3210F99ECF029ECD61C4491340A2625B /* SystemConfiguration.framework */; };
-		943E4FF3819809EA1B09BBAE9039B69F /* Pods-OSXcompileTest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2434D50388A4D9E3FBC68AC685205A0F /* Pods-OSXcompileTest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B1388E727AAB380A9054FE1D45623F14 /* Pods-ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F6B190DDF3AB8D06BD522792EB5CF9 /* Pods-ReachabilitySwift-dummy.m */; };
-		CFAFA60FA4B2086018D9131790BA3FFC /* Pods-EVURLCache-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 15DC273561E1DDABF649C15D52D3080A /* Pods-EVURLCache-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DAC96E1CF0D84BC6CE6322F1A61A945E /* Pods-EVURLCache-ReachabilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 27A82F133435FFA474F99670FBEB21D1 /* Pods-EVURLCache-ReachabilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E2460F1138EE3A9F010D15368C173A91 /* Pods-OSXcompileTest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27337A1FC07B942770AB81F279F06F82 /* Pods-OSXcompileTest-dummy.m */; };
-		E4A46FB07A727A400E2B8E8E9B47B988 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518E616C57EE5A008D0A6DE80DCD26B7 /* SystemConfiguration.framework */; };
-		F530E1506D3CF0E7E11E9CB6BFAE8E21 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B79C3DF7C84EAD04815034B19AD1296 /* Reachability.swift */; };
-		FE798F730C612694278CD8BC6610A8FD /* Pods-OSXcompileTest-ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EAD808006E21B1FF4672EC87F06CE5 /* Pods-OSXcompileTest-ReachabilitySwift-dummy.m */; };
+		57AFA443E4F6B44D4D08CB17D1312F63 /* Pods-OSXcompileTest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D3D21F70B3315E1518148E6013F10B4 /* Pods-OSXcompileTest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CFB88A376B1686278E285CECD858B72 /* Pods-OSXcompileTest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD69625D4978F63A8EE686B9BDB9B12 /* Pods-OSXcompileTest-dummy.m */; };
+		8E34FF4D60D7B9B57732F865967F59B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD6FD1D7D9F530F9EBD5D83BF5E9B37 /* Foundation.framework */; };
+		A14CD5FE10AC43B4DBFF5BF9B99DFF8C /* Pods-EVURLCache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DFF8A9343CAEE010E9ABDA0CFDD52D /* Pods-EVURLCache-dummy.m */; };
+		E5C43A1D819143F7908CAB983F2AC630 /* Pods-EVURLCache-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 02DFDACA340EC956F5C4AE2A7AE53DB4 /* Pods-EVURLCache-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F12FB2F74CB27A1D57B86D5032A4F2A7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE25DD04263CA735DBC0065D686C708D /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		00DB20C3D0B92BA9887ACD566E41AB27 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 506944AA260D4B55F7E2726E2A5E58DD;
-			remoteInfo = "Pods-EVURLCache-ReachabilitySwift";
-		};
-		319C2BC1FD96D1D51A57E91BD6E36B65 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 611C9A045340657B2C6F28B85E10831C;
-			remoteInfo = "Pods-ReachabilitySwift";
-		};
-		A7A44E53729BAEE0FD63D130A36E4813 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 877424B6C776EE522AF880DEFBA5B65A;
-			remoteInfo = "Pods-OSXcompileTest-ReachabilitySwift";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		07813F1FB0BE0AB0FFC01E3523F60AB5 /* Pods-OSXcompileTest-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OSXcompileTest-frameworks.sh"; sourceTree = "<group>"; };
-		1276C9B0A31611C03E70EB9500D89826 /* Pods-EVURLCache-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EVURLCache-acknowledgements.plist"; sourceTree = "<group>"; };
-		15DC273561E1DDABF649C15D52D3080A /* Pods-EVURLCache-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EVURLCache-umbrella.h"; sourceTree = "<group>"; };
-		185D9F96E4EE95870953AAEDAB8419FE /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		20EBF1650C82DD83589B04CD69625904 /* Pods-EVURLCache-ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EVURLCache-ReachabilitySwift.modulemap"; sourceTree = "<group>"; };
-		2434D50388A4D9E3FBC68AC685205A0F /* Pods-OSXcompileTest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OSXcompileTest-umbrella.h"; sourceTree = "<group>"; };
-		252B6C83DDD8A41C7362E93113DA8815 /* Pods-EVURLCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EVURLCache-dummy.m"; sourceTree = "<group>"; };
-		26F6B190DDF3AB8D06BD522792EB5CF9 /* Pods-ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-ReachabilitySwift-dummy.m"; path = "../Pods-ReachabilitySwift/Pods-ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
-		27337A1FC07B942770AB81F279F06F82 /* Pods-OSXcompileTest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OSXcompileTest-dummy.m"; sourceTree = "<group>"; };
-		27A82F133435FFA474F99670FBEB21D1 /* Pods-EVURLCache-ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EVURLCache-ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
-		3184C317EE973D03BD3E4742E47001E6 /* Pods-OSXcompileTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OSXcompileTest.release.xcconfig"; sourceTree = "<group>"; };
-		3210F99ECF029ECD61C4491340A2625B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		32674B22CBEFF096F6A6D1C5EBF6C356 /* Pods-OSXcompileTest-ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSXcompileTest-ReachabilitySwift.xcconfig"; path = "../Pods-OSXcompileTest-ReachabilitySwift/Pods-OSXcompileTest-ReachabilitySwift.xcconfig"; sourceTree = "<group>"; };
-		35338D4BCC524A2853019E84A4037872 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		3568F00D54973539FE2370F2A86B3AB9 /* Pods-EVURLCache-ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVURLCache-ReachabilitySwift.xcconfig"; sourceTree = "<group>"; };
-		37B809B9882295F15751CCD446A21809 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B79C3DF7C84EAD04815034B19AD1296 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Reachability/Reachability.swift; sourceTree = "<group>"; };
-		3E3B2A7CF5BFEB20C0E02A473A64C335 /* Pods-ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-ReachabilitySwift-prefix.pch"; path = "../Pods-ReachabilitySwift/Pods-ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
-		408AF5E98A96107F16123D4AC400AE4F /* Pods-EVURLCache-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVURLCache-resources.sh"; sourceTree = "<group>"; };
-		4462A82C75A5819B83717B7A742EBEC8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		472D5E497EE51A4EADB5B76DC19AE85F /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		48068CCDF8FB23D9D50E394FF3B0ECA3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50DB6DB7AA07C741B2DCAB3E45DA3293 /* ReachabilitySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		518E616C57EE5A008D0A6DE80DCD26B7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		5686D127AF1D7D18C792295B9F84CADF /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5C30708370524E307A49ED2FFEA4FB54 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		5D571D583132C2567E5D45016FA053C6 /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		5E42A313A3A1A4A76F136CCC282E966A /* Pods-OSXcompileTest-ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-OSXcompileTest-ReachabilitySwift-prefix.pch"; path = "../Pods-OSXcompileTest-ReachabilitySwift/Pods-OSXcompileTest-ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
-		5F13D955ADC81A7DF4D90BADA06C6AFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		647AD6728B167CFAA8A5264D4B683286 /* Pods-EVURLCache-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EVURLCache-acknowledgements.markdown"; sourceTree = "<group>"; };
-		67B40B368D60B1DC2FCD4BCA33A8805F /* Pods-EVURLCache.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVURLCache.release.xcconfig"; sourceTree = "<group>"; };
-		680D42488B922D55110B7719BA3CB4D2 /* Pods-OSXcompileTest-ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-OSXcompileTest-ReachabilitySwift-umbrella.h"; path = "../Pods-OSXcompileTest-ReachabilitySwift/Pods-OSXcompileTest-ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
-		6A580E35FE8A2E1EC898A34B8AF83AAB /* Pods-OSXcompileTest-ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Pods-OSXcompileTest-ReachabilitySwift.modulemap"; path = "../Pods-OSXcompileTest-ReachabilitySwift/Pods-OSXcompileTest-ReachabilitySwift.modulemap"; sourceTree = "<group>"; };
-		6BB05B756510995A6017AE5BC3274630 /* Pods-ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReachabilitySwift.xcconfig"; path = "../Pods-ReachabilitySwift/Pods-ReachabilitySwift.xcconfig"; sourceTree = "<group>"; };
-		70EF50CAC2FC03D60DD1D185323A6DBB /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
-		78B4B673EEFE7957DE5967EBF5723FB1 /* Pods-OSXcompileTest-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OSXcompileTest-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7D1AC1A21B39CBC5422BEEF0CD656855 /* Pods-EVURLCache-ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EVURLCache-ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
-		80A79E1F29FB4BEFE55A95808E68E76D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		8105CF3A54DAA974BFAC436F852B8BD0 /* Pods-OSXcompileTest-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OSXcompileTest-acknowledgements.plist"; sourceTree = "<group>"; };
-		9288E179BEA2DA0F95AA20E4D7BE1554 /* Pods-ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Pods-ReachabilitySwift.modulemap"; path = "../Pods-ReachabilitySwift/Pods-ReachabilitySwift.modulemap"; sourceTree = "<group>"; };
-		93D0B28B7E2D2DE96B9A84AA11AA3EDA /* Pods-EVURLCache-ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EVURLCache-ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
-		9435DDEE6A74E9A7FE9C4D4797ACB191 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
-		9633800B57843DD985EFE1C7E82DBEB3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		9E269EF7779F78B52497AADD886C1082 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Pods-ReachabilitySwift/Info.plist"; sourceTree = "<group>"; };
-		9E54F9F94491A9F405C9875759E6ACE2 /* Pods-EVURLCache.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EVURLCache.modulemap"; sourceTree = "<group>"; };
-		A2992409FD9C05839F8EA7D3AA64ADA5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B1CDECCB1DBE64A48CCFCC7426694E1B /* Pods-EVURLCache.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVURLCache.debug.xcconfig"; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C092F51493528BB50F040314DD5AFE23 /* Pods-OSXcompileTest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-OSXcompileTest.modulemap"; sourceTree = "<group>"; };
-		CBED07C35DEC95FE471AE3E9329F064E /* Pods-EVURLCache-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVURLCache-frameworks.sh"; sourceTree = "<group>"; };
-		D29DC443EBCA105FD113890A908E3415 /* Pods-OSXcompileTest-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OSXcompileTest-resources.sh"; sourceTree = "<group>"; };
-		D7702102EF2FED634E574AE0E27F6A2F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8BA870301F8E56B5C21AB45B9C25F13 /* Pods-OSXcompileTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OSXcompileTest.debug.xcconfig"; sourceTree = "<group>"; };
-		DDFCD19A5DE8C49A407A7C6AEB831F23 /* Pods_EVURLCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVURLCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEF9DA7E66D914C6E87F7F27E412B1E4 /* Pods_OSXcompileTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSXcompileTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E60C93A46BA1586089B7AC94087C35E0 /* Pods-ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-ReachabilitySwift-umbrella.h"; path = "../Pods-ReachabilitySwift/Pods-ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
-		F7EAD808006E21B1FF4672EC87F06CE5 /* Pods-OSXcompileTest-ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-OSXcompileTest-ReachabilitySwift-dummy.m"; path = "../Pods-OSXcompileTest-ReachabilitySwift/Pods-OSXcompileTest-ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
-		FFD2D7FDBA4EFB6CF22A270FDD9B43DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Pods-OSXcompileTest-ReachabilitySwift/Info.plist"; sourceTree = "<group>"; };
+		02DFDACA340EC956F5C4AE2A7AE53DB4 /* Pods-EVURLCache-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EVURLCache-umbrella.h"; sourceTree = "<group>"; };
+		181DF7365828D2289B16210A9BD963AD /* Pods-OSXcompileTest-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OSXcompileTest-frameworks.sh"; sourceTree = "<group>"; };
+		3EB4AFA7B8075E21FD50374EB5069C8A /* Pods-EVURLCache.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EVURLCache.modulemap"; sourceTree = "<group>"; };
+		52027673CFC8CA2C270A7B21DE7A58E3 /* Pods-EVURLCache-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EVURLCache-acknowledgements.plist"; sourceTree = "<group>"; };
+		5CFC11668D7E7A541C9F6414820C6671 /* Pods-OSXcompileTest-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OSXcompileTest-acknowledgements.plist"; sourceTree = "<group>"; };
+		6632F94C4AE776ADB0C50A81B07B8DC2 /* Pods-EVURLCache.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVURLCache.debug.xcconfig"; sourceTree = "<group>"; };
+		6855BF9F8CA30D9E26E85060D36C552D /* Pods-OSXcompileTest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-OSXcompileTest.modulemap"; sourceTree = "<group>"; };
+		68DFF8A9343CAEE010E9ABDA0CFDD52D /* Pods-EVURLCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EVURLCache-dummy.m"; sourceTree = "<group>"; };
+		6D3D21F70B3315E1518148E6013F10B4 /* Pods-OSXcompileTest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OSXcompileTest-umbrella.h"; sourceTree = "<group>"; };
+		6D890CD09EC51A345C9D02F2B47C0F65 /* Pods-OSXcompileTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OSXcompileTest.debug.xcconfig"; sourceTree = "<group>"; };
+		79BFDED3B9B36CCA1A17772C343129E4 /* Pods-EVURLCache-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EVURLCache-acknowledgements.markdown"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9714D35A7892726E288A801EE0922322 /* Pods-OSXcompileTest-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OSXcompileTest-resources.sh"; sourceTree = "<group>"; };
+		9BD6FD1D7D9F530F9EBD5D83BF5E9B37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		9D396E11D73C4BC674C293402136548C /* Pods-OSXcompileTest-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OSXcompileTest-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A35C8F0232A0948EB6BF0C6B1B46B9A8 /* Pods_OSXcompileTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSXcompileTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBB1ABEBFAB645AB23C4A544D29F5A02 /* Pods_EVURLCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVURLCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C28CF9D47EB0A25E031A4FAF7C2EA242 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9BB1C35EAE12AB26170A6A681EF6ACE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAD69625D4978F63A8EE686B9BDB9B12 /* Pods-OSXcompileTest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OSXcompileTest-dummy.m"; sourceTree = "<group>"; };
+		CF8F7982C0370FB03A0BD25FED0E25BB /* Pods-EVURLCache.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVURLCache.release.xcconfig"; sourceTree = "<group>"; };
+		DE25DD04263CA735DBC0065D686C708D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		EBD60C5A23ABCCB398D20F5D8A40003D /* Pods-EVURLCache-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVURLCache-frameworks.sh"; sourceTree = "<group>"; };
+		EE560E26FF8277F4E0158444FBF0EC02 /* Pods-EVURLCache-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVURLCache-resources.sh"; sourceTree = "<group>"; };
+		FC9849983E0929AF3FD51370D9EBE061 /* Pods-OSXcompileTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OSXcompileTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		37790407C944091BF4325FF365F3C4D9 /* Frameworks */ = {
+		37D7A7C63F1E770B46F726E965ADA57E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				797D6D109810DDB6D3E209625AD51254 /* Cocoa.framework in Frameworks */,
+				F12FB2F74CB27A1D57B86D5032A4F2A7 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		84CEEEBE31E435606E1BB422AAA4A5DC /* Frameworks */ = {
+		D5547827E23B7AA408C717071FF38756 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BB60ED1B8F7C373349D68E38B4475DE /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A22DCAE25FB6A4084D5A7A95CC754EF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1299CC42FC17E5A9C8CA41E21320EB82 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4E9AD5303DB18B0A8F94A9B645FAFD3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				28F8CCBCD007BCB9EBEEBC4FE81E2222 /* Foundation.framework in Frameworks */,
-				75365301BF303A10AFCED966336AF44E /* SystemConfiguration.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CC5F60A864CC9C5C1759EEB96A57B212 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59C3A7B64AE9060705A86057F936E241 /* Cocoa.framework in Frameworks */,
-				E4A46FB07A727A400E2B8E8E9B47B988 /* SystemConfiguration.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ED59A6A62880A4930AB01BEE92D5099E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2489A2B30541EDA877A2F2DA5FA52CD8 /* Foundation.framework in Frameworks */,
-				8848C2C36A915C03FE5E1E15B79DFAE8 /* SystemConfiguration.framework in Frameworks */,
+				8E34FF4D60D7B9B57732F865967F59B3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		24D2F133A289CDAE91484BB7903DE8E1 /* Support Files */ = {
+		08F3774799B3D91C4B02ED35F8D96190 /* Pods-OSXcompileTest */ = {
 			isa = PBXGroup;
 			children = (
-				FFD2D7FDBA4EFB6CF22A270FDD9B43DF /* Info.plist */,
-				D7702102EF2FED634E574AE0E27F6A2F /* Info.plist */,
-				9E269EF7779F78B52497AADD886C1082 /* Info.plist */,
-				20EBF1650C82DD83589B04CD69625904 /* Pods-EVURLCache-ReachabilitySwift.modulemap */,
-				3568F00D54973539FE2370F2A86B3AB9 /* Pods-EVURLCache-ReachabilitySwift.xcconfig */,
-				7D1AC1A21B39CBC5422BEEF0CD656855 /* Pods-EVURLCache-ReachabilitySwift-dummy.m */,
-				93D0B28B7E2D2DE96B9A84AA11AA3EDA /* Pods-EVURLCache-ReachabilitySwift-prefix.pch */,
-				27A82F133435FFA474F99670FBEB21D1 /* Pods-EVURLCache-ReachabilitySwift-umbrella.h */,
-				6A580E35FE8A2E1EC898A34B8AF83AAB /* Pods-OSXcompileTest-ReachabilitySwift.modulemap */,
-				32674B22CBEFF096F6A6D1C5EBF6C356 /* Pods-OSXcompileTest-ReachabilitySwift.xcconfig */,
-				F7EAD808006E21B1FF4672EC87F06CE5 /* Pods-OSXcompileTest-ReachabilitySwift-dummy.m */,
-				5E42A313A3A1A4A76F136CCC282E966A /* Pods-OSXcompileTest-ReachabilitySwift-prefix.pch */,
-				680D42488B922D55110B7719BA3CB4D2 /* Pods-OSXcompileTest-ReachabilitySwift-umbrella.h */,
-				9288E179BEA2DA0F95AA20E4D7BE1554 /* Pods-ReachabilitySwift.modulemap */,
-				6BB05B756510995A6017AE5BC3274630 /* Pods-ReachabilitySwift.xcconfig */,
-				26F6B190DDF3AB8D06BD522792EB5CF9 /* Pods-ReachabilitySwift-dummy.m */,
-				3E3B2A7CF5BFEB20C0E02A473A64C335 /* Pods-ReachabilitySwift-prefix.pch */,
-				E60C93A46BA1586089B7AC94087C35E0 /* Pods-ReachabilitySwift-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-EVURLCache-ReachabilitySwift";
-			sourceTree = "<group>";
-		};
-		33D47369240F6C1F49177885699DA599 /* OS X */ = {
-			isa = PBXGroup;
-			children = (
-				5C30708370524E307A49ED2FFEA4FB54 /* Cocoa.framework */,
-				518E616C57EE5A008D0A6DE80DCD26B7 /* SystemConfiguration.framework */,
-			);
-			name = "OS X";
-			sourceTree = "<group>";
-		};
-		4A91758D26FA3A30BA877007DE1CBEB1 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B7EA612F81C979C0192D296957243612 /* Pods */,
-				ED5F009767A9EA4E6384E01C79B9137F /* Pods-EVURLCache */,
-				4F50159C47F3227A323BAA483CA0411E /* Pods-OSXcompileTest */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		4F50159C47F3227A323BAA483CA0411E /* Pods-OSXcompileTest */ = {
-			isa = PBXGroup;
-			children = (
-				A2992409FD9C05839F8EA7D3AA64ADA5 /* Info.plist */,
-				C092F51493528BB50F040314DD5AFE23 /* Pods-OSXcompileTest.modulemap */,
-				78B4B673EEFE7957DE5967EBF5723FB1 /* Pods-OSXcompileTest-acknowledgements.markdown */,
-				8105CF3A54DAA974BFAC436F852B8BD0 /* Pods-OSXcompileTest-acknowledgements.plist */,
-				27337A1FC07B942770AB81F279F06F82 /* Pods-OSXcompileTest-dummy.m */,
-				07813F1FB0BE0AB0FFC01E3523F60AB5 /* Pods-OSXcompileTest-frameworks.sh */,
-				D29DC443EBCA105FD113890A908E3415 /* Pods-OSXcompileTest-resources.sh */,
-				2434D50388A4D9E3FBC68AC685205A0F /* Pods-OSXcompileTest-umbrella.h */,
-				D8BA870301F8E56B5C21AB45B9C25F13 /* Pods-OSXcompileTest.debug.xcconfig */,
-				3184C317EE973D03BD3E4742E47001E6 /* Pods-OSXcompileTest.release.xcconfig */,
+				C28CF9D47EB0A25E031A4FAF7C2EA242 /* Info.plist */,
+				6855BF9F8CA30D9E26E85060D36C552D /* Pods-OSXcompileTest.modulemap */,
+				9D396E11D73C4BC674C293402136548C /* Pods-OSXcompileTest-acknowledgements.markdown */,
+				5CFC11668D7E7A541C9F6414820C6671 /* Pods-OSXcompileTest-acknowledgements.plist */,
+				CAD69625D4978F63A8EE686B9BDB9B12 /* Pods-OSXcompileTest-dummy.m */,
+				181DF7365828D2289B16210A9BD963AD /* Pods-OSXcompileTest-frameworks.sh */,
+				9714D35A7892726E288A801EE0922322 /* Pods-OSXcompileTest-resources.sh */,
+				6D3D21F70B3315E1518148E6013F10B4 /* Pods-OSXcompileTest-umbrella.h */,
+				6D890CD09EC51A345C9D02F2B47C0F65 /* Pods-OSXcompileTest.debug.xcconfig */,
+				FC9849983E0929AF3FD51370D9EBE061 /* Pods-OSXcompileTest.release.xcconfig */,
 			);
 			name = "Pods-OSXcompileTest";
 			path = "Target Support Files/Pods-OSXcompileTest";
 			sourceTree = "<group>";
 		};
-		7DB346D0F39D3F0E887471402A8071AB = {
+		1A64C7DD0C40EDE6F7BE17147C267D1F /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				A944112664219A87DE27239EDD7E0B22 /* Frameworks */,
-				9BCD5CBAACE7E3EBED55F693896BB924 /* Pods */,
-				F40642B925A6E8D762626DFA1B651A3A /* Products */,
-				4A91758D26FA3A30BA877007DE1CBEB1 /* Targets Support Files */,
+				BAA2E28A3248D417519D4612F2B55C6B /* Pods-EVURLCache */,
+				08F3774799B3D91C4B02ED35F8D96190 /* Pods-OSXcompileTest */,
 			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		998CD490B7DF9F0D59B4DAD49B9D17CE /* ReachabilitySwift */ = {
+		3AEF7D761E8EA8419BB4A7000AB770CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3B79C3DF7C84EAD04815034B19AD1296 /* Reachability.swift */,
-				24D2F133A289CDAE91484BB7903DE8E1 /* Support Files */,
-			);
-			path = ReachabilitySwift;
-			sourceTree = "<group>";
-		};
-		9BCD5CBAACE7E3EBED55F693896BB924 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				998CD490B7DF9F0D59B4DAD49B9D17CE /* ReachabilitySwift */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		A944112664219A87DE27239EDD7E0B22 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B2002FBAABB5AEB87DCF1B4215AB3AAA /* iOS */,
-				33D47369240F6C1F49177885699DA599 /* OS X */,
+				D0A8DCE2A689A1A949072E3AFF2F6E85 /* iOS */,
+				9304B30CB87FDB77B6CEE9FB6B800855 /* OS X */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B2002FBAABB5AEB87DCF1B4215AB3AAA /* iOS */ = {
+		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				5F13D955ADC81A7DF4D90BADA06C6AFE /* Foundation.framework */,
-				3210F99ECF029ECD61C4491340A2625B /* SystemConfiguration.framework */,
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				3AEF7D761E8EA8419BB4A7000AB770CB /* Frameworks */,
+				D45C537554E8CC6B20210920859338E1 /* Products */,
+				1A64C7DD0C40EDE6F7BE17147C267D1F /* Targets Support Files */,
 			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
-		B7EA612F81C979C0192D296957243612 /* Pods */ = {
+		9304B30CB87FDB77B6CEE9FB6B800855 /* OS X */ = {
 			isa = PBXGroup;
 			children = (
-				4462A82C75A5819B83717B7A742EBEC8 /* Info.plist */,
-				70EF50CAC2FC03D60DD1D185323A6DBB /* Pods.modulemap */,
-				5686D127AF1D7D18C792295B9F84CADF /* Pods-acknowledgements.markdown */,
-				35338D4BCC524A2853019E84A4037872 /* Pods-acknowledgements.plist */,
-				472D5E497EE51A4EADB5B76DC19AE85F /* Pods-dummy.m */,
-				9435DDEE6A74E9A7FE9C4D4797ACB191 /* Pods-frameworks.sh */,
-				185D9F96E4EE95870953AAEDAB8419FE /* Pods-resources.sh */,
-				5D571D583132C2567E5D45016FA053C6 /* Pods-umbrella.h */,
-				80A79E1F29FB4BEFE55A95808E68E76D /* Pods.debug.xcconfig */,
-				9633800B57843DD985EFE1C7E82DBEB3 /* Pods.release.xcconfig */,
+				DE25DD04263CA735DBC0065D686C708D /* Cocoa.framework */,
 			);
-			name = Pods;
-			path = "Target Support Files/Pods";
+			name = "OS X";
 			sourceTree = "<group>";
 		};
-		ED5F009767A9EA4E6384E01C79B9137F /* Pods-EVURLCache */ = {
+		BAA2E28A3248D417519D4612F2B55C6B /* Pods-EVURLCache */ = {
 			isa = PBXGroup;
 			children = (
-				48068CCDF8FB23D9D50E394FF3B0ECA3 /* Info.plist */,
-				9E54F9F94491A9F405C9875759E6ACE2 /* Pods-EVURLCache.modulemap */,
-				647AD6728B167CFAA8A5264D4B683286 /* Pods-EVURLCache-acknowledgements.markdown */,
-				1276C9B0A31611C03E70EB9500D89826 /* Pods-EVURLCache-acknowledgements.plist */,
-				252B6C83DDD8A41C7362E93113DA8815 /* Pods-EVURLCache-dummy.m */,
-				CBED07C35DEC95FE471AE3E9329F064E /* Pods-EVURLCache-frameworks.sh */,
-				408AF5E98A96107F16123D4AC400AE4F /* Pods-EVURLCache-resources.sh */,
-				15DC273561E1DDABF649C15D52D3080A /* Pods-EVURLCache-umbrella.h */,
-				B1CDECCB1DBE64A48CCFCC7426694E1B /* Pods-EVURLCache.debug.xcconfig */,
-				67B40B368D60B1DC2FCD4BCA33A8805F /* Pods-EVURLCache.release.xcconfig */,
+				C9BB1C35EAE12AB26170A6A681EF6ACE /* Info.plist */,
+				3EB4AFA7B8075E21FD50374EB5069C8A /* Pods-EVURLCache.modulemap */,
+				79BFDED3B9B36CCA1A17772C343129E4 /* Pods-EVURLCache-acknowledgements.markdown */,
+				52027673CFC8CA2C270A7B21DE7A58E3 /* Pods-EVURLCache-acknowledgements.plist */,
+				68DFF8A9343CAEE010E9ABDA0CFDD52D /* Pods-EVURLCache-dummy.m */,
+				EBD60C5A23ABCCB398D20F5D8A40003D /* Pods-EVURLCache-frameworks.sh */,
+				EE560E26FF8277F4E0158444FBF0EC02 /* Pods-EVURLCache-resources.sh */,
+				02DFDACA340EC956F5C4AE2A7AE53DB4 /* Pods-EVURLCache-umbrella.h */,
+				6632F94C4AE776ADB0C50A81B07B8DC2 /* Pods-EVURLCache.debug.xcconfig */,
+				CF8F7982C0370FB03A0BD25FED0E25BB /* Pods-EVURLCache.release.xcconfig */,
 			);
 			name = "Pods-EVURLCache";
 			path = "Target Support Files/Pods-EVURLCache";
 			sourceTree = "<group>";
 		};
-		F40642B925A6E8D762626DFA1B651A3A /* Products */ = {
+		D0A8DCE2A689A1A949072E3AFF2F6E85 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				37B809B9882295F15751CCD446A21809 /* Pods.framework */,
-				DDFCD19A5DE8C49A407A7C6AEB831F23 /* Pods_EVURLCache.framework */,
-				DEF9DA7E66D914C6E87F7F27E412B1E4 /* Pods_OSXcompileTest.framework */,
-				50DB6DB7AA07C741B2DCAB3E45DA3293 /* ReachabilitySwift.framework */,
+				9BD6FD1D7D9F530F9EBD5D83BF5E9B37 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D45C537554E8CC6B20210920859338E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBB1ABEBFAB645AB23C4A544D29F5A02 /* Pods_EVURLCache.framework */,
+				A35C8F0232A0948EB6BF0C6B1B46B9A8 /* Pods_OSXcompileTest.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,160 +155,57 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1AA889F33932A81ED29125A868310DB3 /* Headers */ = {
+		52D64D78FD5FA37279E3665F5BFFFAD4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F30E402D08EF59E8FD22D70E5FBF251 /* Pods-ReachabilitySwift-umbrella.h in Headers */,
+				E5C43A1D819143F7908CAB983F2AC630 /* Pods-EVURLCache-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2B963E3F16E9BEA01E2C76ED29EB5B4E /* Headers */ = {
+		C4C50E6347F28A05CE650FD56C162699 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC96E1CF0D84BC6CE6322F1A61A945E /* Pods-EVURLCache-ReachabilitySwift-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		700BC59FFDFEEEBC1695156355CAE76D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5F54EEDBCC5C4E57BC91FB5056317D1B /* Pods-OSXcompileTest-ReachabilitySwift-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8ADDEB91A09CD8EA0251959F948019A3 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				943E4FF3819809EA1B09BBAE9039B69F /* Pods-OSXcompileTest-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ADDC706CDADD055456BBDA90A38067B4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CFAFA60FA4B2086018D9131790BA3FFC /* Pods-EVURLCache-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D40B1379142A297C896EBDF5F152899F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81008473FF6452E6175863987B880E79 /* Pods-umbrella.h in Headers */,
+				57AFA443E4F6B44D4D08CB17D1312F63 /* Pods-OSXcompileTest-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4FBF259B1C4D6EB69E18A0E5BF6832E8 /* Pods-OSXcompileTest */ = {
+		B81A7383337E087DFE99A604FC8F4B41 /* Pods-OSXcompileTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A30630261223E0006D3A24D4F315AD30 /* Build configuration list for PBXNativeTarget "Pods-OSXcompileTest" */;
+			buildConfigurationList = 9AEFE9D518B7C7EC96567394E8D2ACA6 /* Build configuration list for PBXNativeTarget "Pods-OSXcompileTest" */;
 			buildPhases = (
-				BABB929D2CE2D9DBC00800F64F38351F /* Sources */,
-				37790407C944091BF4325FF365F3C4D9 /* Frameworks */,
-				8ADDEB91A09CD8EA0251959F948019A3 /* Headers */,
+				E3FBDBB9C4A131BFB4B7907F782BB21E /* Sources */,
+				37D7A7C63F1E770B46F726E965ADA57E /* Frameworks */,
+				C4C50E6347F28A05CE650FD56C162699 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E18A10973D8601845F041EE3EAE2D8F0 /* PBXTargetDependency */,
 			);
 			name = "Pods-OSXcompileTest";
 			productName = "Pods-OSXcompileTest";
-			productReference = DEF9DA7E66D914C6E87F7F27E412B1E4 /* Pods_OSXcompileTest.framework */;
+			productReference = A35C8F0232A0948EB6BF0C6B1B46B9A8 /* Pods_OSXcompileTest.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		506944AA260D4B55F7E2726E2A5E58DD /* Pods-EVURLCache-ReachabilitySwift */ = {
+		FC617A691293029EAEFAE86201CCD74C /* Pods-EVURLCache */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C28EFAB151613C07806273E0E6DD8825 /* Build configuration list for PBXNativeTarget "Pods-EVURLCache-ReachabilitySwift" */;
+			buildConfigurationList = 0BE3E5633B5C00D71448059C7D42FCFD /* Build configuration list for PBXNativeTarget "Pods-EVURLCache" */;
 			buildPhases = (
-				0CB8516D8BE6EA36D4BA3D94842B1BEA /* Sources */,
-				ED59A6A62880A4930AB01BEE92D5099E /* Frameworks */,
-				2B963E3F16E9BEA01E2C76ED29EB5B4E /* Headers */,
+				5DE86A39A0A2975337723C7B0DCAB79F /* Sources */,
+				D5547827E23B7AA408C717071FF38756 /* Frameworks */,
+				52D64D78FD5FA37279E3665F5BFFFAD4 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "Pods-EVURLCache-ReachabilitySwift";
-			productName = "Pods-EVURLCache-ReachabilitySwift";
-			productReference = 50DB6DB7AA07C741B2DCAB3E45DA3293 /* ReachabilitySwift.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		611C9A045340657B2C6F28B85E10831C /* Pods-ReachabilitySwift */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A15E6F9C0A157C859E8BEAB5AFA8E696 /* Build configuration list for PBXNativeTarget "Pods-ReachabilitySwift" */;
-			buildPhases = (
-				21CA6FB890ACBFBD50D925757BB0FFF5 /* Sources */,
-				A4E9AD5303DB18B0A8F94A9B645FAFD3 /* Frameworks */,
-				1AA889F33932A81ED29125A868310DB3 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-ReachabilitySwift";
-			productName = "Pods-ReachabilitySwift";
-			productReference = 50DB6DB7AA07C741B2DCAB3E45DA3293 /* ReachabilitySwift.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		877424B6C776EE522AF880DEFBA5B65A /* Pods-OSXcompileTest-ReachabilitySwift */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DFA7E9E17BCC08C223A655B60477076D /* Build configuration list for PBXNativeTarget "Pods-OSXcompileTest-ReachabilitySwift" */;
-			buildPhases = (
-				84971D13B6CFF34A288BFB84E83A7B87 /* Sources */,
-				CC5F60A864CC9C5C1759EEB96A57B212 /* Frameworks */,
-				700BC59FFDFEEEBC1695156355CAE76D /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-OSXcompileTest-ReachabilitySwift";
-			productName = "Pods-OSXcompileTest-ReachabilitySwift";
-			productReference = 50DB6DB7AA07C741B2DCAB3E45DA3293 /* ReachabilitySwift.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		8DEA8B708B750F16114CD506E4C528C0 /* Pods-EVURLCache */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 43C7430B059F8850C5DDB6D3FB6FA942 /* Build configuration list for PBXNativeTarget "Pods-EVURLCache" */;
-			buildPhases = (
-				27434F164BC3004C49E1CA91B5BA1B6B /* Sources */,
-				84CEEEBE31E435606E1BB422AAA4A5DC /* Frameworks */,
-				ADDC706CDADD055456BBDA90A38067B4 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9D666B9DE7B8219F347E2DB1A78B7977 /* PBXTargetDependency */,
 			);
 			name = "Pods-EVURLCache";
 			productName = "Pods-EVURLCache";
-			productReference = DDFCD19A5DE8C49A407A7C6AEB831F23 /* Pods_EVURLCache.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		99AF2DE718BFA9C409AEAC66723DC6B1 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FD0210866A5B34E42DF7C9E0D53BBF06 /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				08C85D8C2D4242A489BAA441F4428F6E /* Sources */,
-				8A22DCAE25FB6A4084D5A7A95CC754EF /* Frameworks */,
-				D40B1379142A297C896EBDF5F152899F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B7D0581A29534CDF07236A00EBCFEC6B /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = 37B809B9882295F15751CCD446A21809 /* Pods.framework */;
+			productReference = BBB1ABEBFAB645AB23C4A544D29F5A02 /* Pods_EVURLCache.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -494,7 +214,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -505,242 +225,71 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = F40642B925A6E8D762626DFA1B651A3A /* Products */;
+			productRefGroup = D45C537554E8CC6B20210920859338E1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				99AF2DE718BFA9C409AEAC66723DC6B1 /* Pods */,
-				8DEA8B708B750F16114CD506E4C528C0 /* Pods-EVURLCache */,
-				506944AA260D4B55F7E2726E2A5E58DD /* Pods-EVURLCache-ReachabilitySwift */,
-				4FBF259B1C4D6EB69E18A0E5BF6832E8 /* Pods-OSXcompileTest */,
-				877424B6C776EE522AF880DEFBA5B65A /* Pods-OSXcompileTest-ReachabilitySwift */,
-				611C9A045340657B2C6F28B85E10831C /* Pods-ReachabilitySwift */,
+				FC617A691293029EAEFAE86201CCD74C /* Pods-EVURLCache */,
+				B81A7383337E087DFE99A604FC8F4B41 /* Pods-OSXcompileTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		08C85D8C2D4242A489BAA441F4428F6E /* Sources */ = {
+		5DE86A39A0A2975337723C7B0DCAB79F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				775A8A14B74B461D5C09F975FA38532B /* Pods-dummy.m in Sources */,
+				A14CD5FE10AC43B4DBFF5BF9B99DFF8C /* Pods-EVURLCache-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0CB8516D8BE6EA36D4BA3D94842B1BEA /* Sources */ = {
+		E3FBDBB9C4A131BFB4B7907F782BB21E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1176AFF2BA5DFCBD5B44945D0305F754 /* Pods-EVURLCache-ReachabilitySwift-dummy.m in Sources */,
-				5F53F0F38519E12212CAACB0BE740B4F /* Reachability.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		21CA6FB890ACBFBD50D925757BB0FFF5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B1388E727AAB380A9054FE1D45623F14 /* Pods-ReachabilitySwift-dummy.m in Sources */,
-				F530E1506D3CF0E7E11E9CB6BFAE8E21 /* Reachability.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27434F164BC3004C49E1CA91B5BA1B6B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				089834B52544B55D195409CA1BD280E4 /* Pods-EVURLCache-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		84971D13B6CFF34A288BFB84E83A7B87 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE798F730C612694278CD8BC6610A8FD /* Pods-OSXcompileTest-ReachabilitySwift-dummy.m in Sources */,
-				49616C00D6B6783E7AC5B9B1B6FBB0AF /* Reachability.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BABB929D2CE2D9DBC00800F64F38351F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E2460F1138EE3A9F010D15368C173A91 /* Pods-OSXcompileTest-dummy.m in Sources */,
+				6CFB88A376B1686278E285CECD858B72 /* Pods-OSXcompileTest-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		9D666B9DE7B8219F347E2DB1A78B7977 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-EVURLCache-ReachabilitySwift";
-			target = 506944AA260D4B55F7E2726E2A5E58DD /* Pods-EVURLCache-ReachabilitySwift */;
-			targetProxy = 00DB20C3D0B92BA9887ACD566E41AB27 /* PBXContainerItemProxy */;
-		};
-		B7D0581A29534CDF07236A00EBCFEC6B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-ReachabilitySwift";
-			target = 611C9A045340657B2C6F28B85E10831C /* Pods-ReachabilitySwift */;
-			targetProxy = 319C2BC1FD96D1D51A57E91BD6E36B65 /* PBXContainerItemProxy */;
-		};
-		E18A10973D8601845F041EE3EAE2D8F0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-OSXcompileTest-ReachabilitySwift";
-			target = 877424B6C776EE522AF880DEFBA5B65A /* Pods-OSXcompileTest-ReachabilitySwift */;
-			targetProxy = A7A44E53729BAEE0FD63D130A36E4813 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		094E89B5E155D8FE365A8BB8CD9F73F0 /* Debug */ = {
+		3EF32A7475F775B6E85BD1864D130F3B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1CDECCB1DBE64A48CCFCC7426694E1B /* Pods-EVURLCache.debug.xcconfig */;
+			baseConfigurationReference = 6D890CD09EC51A345C9D02F2B47C0F65 /* Pods-OSXcompileTest.debug.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-EVURLCache/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EVURLCache/Pods-EVURLCache.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_EVURLCache;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		0D20FDF891AF30A4BF7DE5F477C982AB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32674B22CBEFF096F6A6D1C5EBF6C356 /* Pods-OSXcompileTest-ReachabilitySwift.xcconfig */;
-			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_VERSION = A;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-OSXcompileTest-ReachabilitySwift/Pods-OSXcompileTest-ReachabilitySwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-OSXcompileTest-ReachabilitySwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MODULEMAP_FILE = "Target Support Files/Pods-OSXcompileTest-ReachabilitySwift/Pods-OSXcompileTest-ReachabilitySwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ReachabilitySwift;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		2C878B27A511060E2118827332713436 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BB05B756510995A6017AE5BC3274630 /* Pods-ReachabilitySwift.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-ReachabilitySwift/Pods-ReachabilitySwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-ReachabilitySwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-ReachabilitySwift/Pods-ReachabilitySwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ReachabilitySwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		4263DF5F38317DD6922110674DE31258 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32674B22CBEFF096F6A6D1C5EBF6C356 /* Pods-OSXcompileTest-ReachabilitySwift.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-OSXcompileTest-ReachabilitySwift/Pods-OSXcompileTest-ReachabilitySwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-OSXcompileTest-ReachabilitySwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MODULEMAP_FILE = "Target Support Files/Pods-OSXcompileTest-ReachabilitySwift/Pods-OSXcompileTest-ReachabilitySwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ReachabilitySwift;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5288929B92846117B05C6671A367B030 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3184C317EE973D03BD3E4742E47001E6 /* Pods-OSXcompileTest.release.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-OSXcompileTest/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MODULEMAP_FILE = "Target Support Files/Pods-OSXcompileTest/Pods-OSXcompileTest.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_OSXcompileTest;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		5309DBFFC6EDE3BDF2D1D673444EC4F5 /* Debug */ = {
+		4867C507DF0B969532C8C5BE3E956BF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -758,10 +307,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
@@ -780,212 +331,7 @@
 			};
 			name = Debug;
 		};
-		61B1B7749D63BD3BAD999442BFF17E2B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8BA870301F8E56B5C21AB45B9C25F13 /* Pods-OSXcompileTest.debug.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "Target Support Files/Pods-OSXcompileTest/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MODULEMAP_FILE = "Target Support Files/Pods-OSXcompileTest/Pods-OSXcompileTest.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_OSXcompileTest;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6D2C66DDBA9B6394D05720F579F81FDF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3568F00D54973539FE2370F2A86B3AB9 /* Pods-EVURLCache-ReachabilitySwift.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-EVURLCache-ReachabilitySwift/Pods-EVURLCache-ReachabilitySwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-EVURLCache-ReachabilitySwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-EVURLCache-ReachabilitySwift/Pods-EVURLCache-ReachabilitySwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ReachabilitySwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		858260646299EA4F94A538894B24FEF2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67B40B368D60B1DC2FCD4BCA33A8805F /* Pods-EVURLCache.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-EVURLCache/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EVURLCache/Pods-EVURLCache.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_EVURLCache;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		935B7C78D904BC8ACB44AF38E429371E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3568F00D54973539FE2370F2A86B3AB9 /* Pods-EVURLCache-ReachabilitySwift.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-EVURLCache-ReachabilitySwift/Pods-EVURLCache-ReachabilitySwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-EVURLCache-ReachabilitySwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-EVURLCache-ReachabilitySwift/Pods-EVURLCache-ReachabilitySwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ReachabilitySwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		984085E518F54259CC171393D4AAD9EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9633800B57843DD985EFE1C7E82DBEB3 /* Pods.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		BF0A2B3790B7D572AA4FF9AB478A0ABB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80A79E1F29FB4BEFE55A95808E68E76D /* Pods.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D62FD464567B3580D17511666D60212E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BB05B756510995A6017AE5BC3274630 /* Pods-ReachabilitySwift.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-ReachabilitySwift/Pods-ReachabilitySwift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-ReachabilitySwift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-ReachabilitySwift/Pods-ReachabilitySwift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ReachabilitySwift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FD8884DBD2C651E2D937D1E7682F8C19 /* Release */ = {
+		7B2A73CB5D961E2B26CEAA717496AD64 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1005,7 +351,10 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1020,68 +369,132 @@
 			};
 			name = Release;
 		};
+		B1D4AB5CB3E0865A0F2FA72E5D7A23A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6632F94C4AE776ADB0C50A81B07B8DC2 /* Pods-EVURLCache.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-EVURLCache/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EVURLCache/Pods-EVURLCache.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_EVURLCache;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CA628AC9A9A399EAAEEB5914C95AEC1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC9849983E0929AF3FD51370D9EBE061 /* Pods-OSXcompileTest.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-OSXcompileTest/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "Target Support Files/Pods-OSXcompileTest/Pods-OSXcompileTest.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_OSXcompileTest;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CC797C498664DF0B4E9C8067C0230D05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF8F7982C0370FB03A0BD25FED0E25BB /* Pods-EVURLCache.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-EVURLCache/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EVURLCache/Pods-EVURLCache.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_EVURLCache;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0BE3E5633B5C00D71448059C7D42FCFD /* Build configuration list for PBXNativeTarget "Pods-EVURLCache" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1D4AB5CB3E0865A0F2FA72E5D7A23A2 /* Debug */,
+				CC797C498664DF0B4E9C8067C0230D05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5309DBFFC6EDE3BDF2D1D673444EC4F5 /* Debug */,
-				FD8884DBD2C651E2D937D1E7682F8C19 /* Release */,
+				4867C507DF0B969532C8C5BE3E956BF9 /* Debug */,
+				7B2A73CB5D961E2B26CEAA717496AD64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		43C7430B059F8850C5DDB6D3FB6FA942 /* Build configuration list for PBXNativeTarget "Pods-EVURLCache" */ = {
+		9AEFE9D518B7C7EC96567394E8D2ACA6 /* Build configuration list for PBXNativeTarget "Pods-OSXcompileTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				094E89B5E155D8FE365A8BB8CD9F73F0 /* Debug */,
-				858260646299EA4F94A538894B24FEF2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A15E6F9C0A157C859E8BEAB5AFA8E696 /* Build configuration list for PBXNativeTarget "Pods-ReachabilitySwift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D62FD464567B3580D17511666D60212E /* Debug */,
-				2C878B27A511060E2118827332713436 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A30630261223E0006D3A24D4F315AD30 /* Build configuration list for PBXNativeTarget "Pods-OSXcompileTest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				61B1B7749D63BD3BAD999442BFF17E2B /* Debug */,
-				5288929B92846117B05C6671A367B030 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C28EFAB151613C07806273E0E6DD8825 /* Build configuration list for PBXNativeTarget "Pods-EVURLCache-ReachabilitySwift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				935B7C78D904BC8ACB44AF38E429371E /* Debug */,
-				6D2C66DDBA9B6394D05720F579F81FDF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DFA7E9E17BCC08C223A655B60477076D /* Build configuration list for PBXNativeTarget "Pods-OSXcompileTest-ReachabilitySwift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0D20FDF891AF30A4BF7DE5F477C982AB /* Debug */,
-				4263DF5F38317DD6922110674DE31258 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FD0210866A5B34E42DF7C9E0D53BBF06 /* Build configuration list for PBXNativeTarget "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF0A2B3790B7D572AA4FF9AB478A0ABB /* Debug */,
-				984085E518F54259CC171393D4AAD9EB /* Release */,
+				3EF32A7475F775B6E85BD1864D130F3B /* Debug */,
+				CA628AC9A9A399EAAEEB5914C95AEC1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ReachabilitySwift
+//import ReachabilitySwift
 
 #if os(iOS)
     import MobileCoreServices
@@ -47,7 +47,7 @@ public class EVURLCache : NSURLCache {
     }
 
     // Log a message with info if enabled
-    public static func debugLog<T>(object: T, filename: String = __FILE__, line: Int = __LINE__, funcname: String = __FUNCTION__) {
+    public static func debugLog<T>(object: T, filename: String = #file, line: Int = #line, funcname: String = #function) {
         if LOGGING {
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss:SSS"
