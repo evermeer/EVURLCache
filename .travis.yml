@@ -9,4 +9,4 @@ before_install:
 - if brew outdated | grep -qx xctool; then brew upgrade xctool; fi
 
 script:
-- xctool clean build -workspace EVURLCache.xcworkspace -scheme EVURLCache -sdk iphonesimulator9.1 ONLY_ACTIVE_ARCH=NO
+- xctool clean build -workspace EVURLCache.xcworkspace -scheme EVURLCache -sdk iphonesimulator9.2 ONLY_ACTIVE_ARCH=NO

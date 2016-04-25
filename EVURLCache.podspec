@@ -34,7 +34,7 @@ s.license      = { :type => "MIT", :file => "LICENSE" }
 #  profile URL.
 #
 
-s.author    = "evermeer"
+s.authors    = {"evermeer" => "edwin@evict.nl"}
 s.social_media_url   = "http://twitter.com/evermeer"
 
 # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -52,8 +52,8 @@ s.osx.platform = :osx, "10.11"
 #
 s.ios.deployment_target = "8.0"
 s.osx.deployment_target = "10.9"
-#s.watchos.deployment_target = '2.0'
-#s.tvos.deployment_target = '9.0'
+# s.watchos.deployment_target = '2.0'
+# s.tvos.deployment_target = '9.0'
 
 
 # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -92,8 +92,6 @@ s.osx.frameworks = "Foundation", "CoreServices"
 s.requires_arc = true
 
 # In cocoapods version 1 ReachabilitySwift does not work as a dependency. For now the file is included in EVURLCache
-#s.dependency "ReachabilitySwift"
-
-
+# s.dependency "ReachabilitySwift"
 
 end
