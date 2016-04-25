@@ -126,7 +126,7 @@ EVURLCache is available under the MIT 3 license. See the LICENSE file for more i
 ## My other libraries:
 Also see my other open source iOS libraries:
 
-- [EVURLCache](https://github.com/evermeer/EVURLCache) - Swift library with reflection functions with support for NSCoding, Printable, Hashable, Equatable and JSON 
+- [EVReflection](https://github.com/evermeer/EVURLCache) - Swift library with reflection functions with support for NSCoding, Printable, Hashable, Equatable and JSON 
 - [EVCloudKitDao](https://github.com/evermeer/EVCloudKitDao) - Simplified access to Apple's CloudKit
 - [EVFaceTracker](https://github.com/evermeer/EVFaceTracker) - Calculate the distance and angle of your device with regards to your face in order to simulate a 3D effect
 - [EVURLCache](https://github.com/evermeer/EVURLCache) - a NSURLCache subclass for handling all web requests that use NSURLReques
