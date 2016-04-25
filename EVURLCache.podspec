@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "EVURLCache"
-s.version      = "2.6.0"
+s.version      = "2.6.1"
 s.summary      = "NSURLCache subclass for handeling all web requests that use NSURLRequest"
 s.description  = "This is a NSURLCache subclass for handeling all web requests that use NSURLRequest. (This includes UIWebView)"
 s.homepage     = "https://github.com/evermeer/EVURLCache"
@@ -42,8 +42,8 @@ s.social_media_url   = "http://twitter.com/evermeer"
 #  If this Pod runs only on iOS or OS X, then specify the platform and
 #  the deployment target. You can optionally include the target after the platform.
 #
-s.ios.platform = :ios, "9.0"
-s.osx.platform = :osx, "10.11"
+#s.ios.platform = :ios, "9.0"
+#s.osx.platform = :osx, "10.11"
 
 
 # ――― Deployment targets ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
