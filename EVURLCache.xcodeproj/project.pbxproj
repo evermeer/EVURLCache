@@ -19,6 +19,7 @@
 		7F4E25B21C11A5D0009494A8 /* EVURLCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4A0D611BEE497100059923 /* EVURLCache.swift */; };
 		7F649BBD1CCE49C0007C398F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF79271CCD0A6A0085E6E4 /* Reachability.swift */; };
 		7FFF79281CCD0A6A0085E6E4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF79271CCD0A6A0085E6E4 /* Reachability.swift */; };
+		8B33A8981CD9269700F2EB13 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B33A8971CD9269700F2EB13 /* ViewController2.swift */; };
 		8ECDF9DD6ED38CDFCBAE4F3F /* Pods_OSXcompileTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81C12CCF04AF23300938DC5 /* Pods_OSXcompileTest.framework */; };
 		C65B38F18FC73826FCD2A7B6 /* Pods_EVURLCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7566676951737F7DE11E9363 /* Pods_EVURLCache.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		7F4E25AC1C11A5C6009494A8 /* OSXcompileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSXcompileTest.swift; sourceTree = "<group>"; };
 		7F4E25AE1C11A5C6009494A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FFF79271CCD0A6A0085E6E4 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Pod/Reachability.swift; sourceTree = "<group>"; };
+		8B33A8971CD9269700F2EB13 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		C2CF2074981B9568E99CB19C /* Pods-OSXcompileTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSXcompileTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OSXcompileTest/Pods-OSXcompileTest.debug.xcconfig"; sourceTree = "<group>"; };
 		CD76B9911492321A2FCCD8BE /* Pods-EVURLCache.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVURLCache.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EVURLCache/Pods-EVURLCache.debug.xcconfig"; sourceTree = "<group>"; };
 		D81C12CCF04AF23300938DC5 /* Pods_OSXcompileTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSXcompileTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 				7F4A0D601BEE495D00059923 /* Pod */,
 				7F4A0D4E1BEE481400059923 /* AppDelegate.swift */,
 				7F4A0D501BEE481400059923 /* ViewController.swift */,
+				8B33A8971CD9269700F2EB13 /* ViewController2.swift */,
 				7F4A0D521BEE481400059923 /* Main.storyboard */,
 				7F4A0D551BEE481400059923 /* Assets.xcassets */,
 				7F4A0D571BEE481400059923 /* LaunchScreen.storyboard */,
@@ -354,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B33A8981CD9269700F2EB13 /* ViewController2.swift in Sources */,
 				7F4A0D511BEE481400059923 /* ViewController.swift in Sources */,
 				7F4A0D621BEE497100059923 /* EVURLCache.swift in Sources */,
 				7FFF79281CCD0A6A0085E6E4 /* Reachability.swift in Sources */,
