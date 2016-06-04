@@ -15,7 +15,7 @@ import Foundation
     import CoreServices
 #endif
 
-public class EVURLCache : NSURLCache {
+public class EVURLCache: NSURLCache {
 
     public static var URLCACHE_CACHE_KEY = "MobileAppCacheKey" // Add this header variable to the response if you want to save the response using this key as the filename.
     public static var URLCACHE_EXPIRATION_AGE_KEY = "MobileAppExpirationAgeKey" // Add this header variable to the response to set the expiration age.
@@ -53,31 +53,31 @@ public class EVURLCache : NSURLCache {
             dateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss:SSS"
             let process = NSProcessInfo.processInfo()
             let threadId = "." //NSThread.currentThread().threadDictionary
-            NSLog("\(dateFormatter.stringFromDate(NSDate())) \(process.processName))[\(process.processIdentifier):\(threadId)] \((filename as NSString).lastPathComponent)(\(line)) \(funcname):\r\t\(object)\n")
+            print("\(dateFormatter.stringFromDate(NSDate())) \(process.processName))[\(process.processIdentifier):\(threadId)] \((filename as NSString).lastPathComponent)(\(line)) \(funcname):\r\t\(object)\n")
         }
     }
 
     // Will be called by a NSURLConnection when it's wants to know if there is something in the cache.
     public override func cachedResponseForRequest(request: NSURLRequest) -> NSCachedURLResponse? {
         guard let url = request.URL else {
-            EVURLCache.debugLog("CACHE not allowed for nil URLs");
+            EVURLCache.debugLog("CACHE not allowed for nil URLs")
             return nil
         }
 
         if url.absoluteString.isEmpty {
-            EVURLCache.debugLog("CACHE not allowed for empty URLs");
-            return nil;
+            EVURLCache.debugLog("CACHE not allowed for empty URLs")
+            return nil
         }
 
         if !EVURLCache._filter(request: request) {
-            EVURLCache.debugLog("CACHE skipped because of filter");
+            EVURLCache.debugLog("CACHE skipped because of filter")
             return nil
         }
 
         // is caching allowed
         if ((request.cachePolicy == NSURLRequestCachePolicy.ReloadIgnoringCacheData || url.absoluteString.hasPrefix("file:/") || url.absoluteString.hasPrefix("data:")) && EVURLCache.networkAvailable()) {
-            EVURLCache.debugLog("CACHE not allowed for \(url)");
-            return nil;
+            EVURLCache.debugLog("CACHE not allowed for \(url)")
+            return nil
         }
 
         // Is the file in the cache? If not, is the file in the PreCache?
@@ -86,22 +86,22 @@ public class EVURLCache : NSURLCache {
             storagePath  = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._preCacheDirectory)
             if !NSFileManager.defaultManager().fileExistsAtPath(storagePath) {
                 EVURLCache.debugLog("CACHE not found \(storagePath)")
-                return nil;
+                return nil
             }
         }
 
         // Check file status only if we have network, otherwise return it anyway.
         if EVURLCache.networkAvailable() {
             if cacheItemExpired(request, storagePath: storagePath) {
-                let maxAge:String = request.valueForHTTPHeaderField(EVURLCache.URLCACHE_EXPIRATION_AGE_KEY) ?? EVURLCache.MAX_AGE
-                EVURLCache.debugLog("CACHE item older than \(maxAge) maxAgeHours");
+                let maxAge: String = request.valueForHTTPHeaderField(EVURLCache.URLCACHE_EXPIRATION_AGE_KEY) ?? EVURLCache.MAX_AGE
+                EVURLCache.debugLog("CACHE item older than \(maxAge) maxAgeHours")
                 return nil
             }
         }
 
         // Read object from file
         if let response = NSKeyedUnarchiver.unarchiveObjectWithFile(storagePath) as? NSCachedURLResponse {
-            EVURLCache.debugLog("Returning cached data from \(storagePath)");
+            EVURLCache.debugLog("Returning cached data from \(storagePath)")
 
             // I have to find out the difrence. For now I will let the developer checkt which version to use
             if EVURLCache.RECREATE_CACHE_RESPONSE {
@@ -112,7 +112,7 @@ public class EVURLCache : NSURLCache {
             // This works for the game, but not for my site.
             return response
         } else {
-            EVURLCache.debugLog("The file is probably not put in the local path using NSKeyedArchiver \(storagePath)");
+            EVURLCache.debugLog("The file is probably not put in the local path using NSKeyedArchiver \(storagePath)")
         }
         return nil
     }
@@ -124,7 +124,7 @@ public class EVURLCache : NSURLCache {
         }
         if let httpResponse = cachedResponse.response as? NSHTTPURLResponse {
             if httpResponse.statusCode >= 400 {
-                EVURLCache.debugLog("CACHE Do not cache error \(httpResponse.statusCode) page for : \(request.URL) \(httpResponse.debugDescription)");
+                EVURLCache.debugLog("CACHE Do not cache error \(httpResponse.statusCode) page for : \(request.URL) \(httpResponse.debugDescription)")
                 return
             }
         }
@@ -137,7 +137,7 @@ public class EVURLCache : NSURLCache {
                 EVURLCache.debugLog("CACHE not storing file, it's not allowed by the cachePolicy : \(request.URL)")
                 return
             }
-            EVURLCache.debugLog("CACHE file in PreCache folder, overriding cachePolicy : \(request.URL)");
+            EVURLCache.debugLog("CACHE file in PreCache folder, overriding cachePolicy : \(request.URL)")
         }
 
         // create storrage folder
@@ -149,41 +149,41 @@ public class EVURLCache : NSURLCache {
                 }
                 try NSFileManager.defaultManager().createDirectoryAtPath(storageDirectory, withIntermediateDirectories: true, attributes: nil)
             } catch let error as NSError {
-                EVURLCache.debugLog("Error creating cache directory \(storageDirectory)");
-                EVURLCache.debugLog("Error \(error.debugDescription)");
+                EVURLCache.debugLog("Error creating cache directory \(storageDirectory)")
+                EVURLCache.debugLog("Error \(error.debugDescription)")
             }
         }
 
         if let previousResponse = NSKeyedUnarchiver.unarchiveObjectWithFile(storagePath) as? NSCachedURLResponse {
             if previousResponse.data == cachedResponse.data && !cacheItemExpired(request, storagePath: storagePath) {
-                EVURLCache.debugLog("CACHE not rewriting stored file");
+                EVURLCache.debugLog("CACHE not rewriting stored file")
                 return
             }
         }
 
         // save file
-        EVURLCache.debugLog("Writing data to \(storagePath)");
+        EVURLCache.debugLog("Writing data to \(storagePath)")
         if !NSKeyedArchiver.archiveRootObject(cachedResponse, toFile: storagePath) {
-            EVURLCache.debugLog("Could not write file to cache");
+            EVURLCache.debugLog("Could not write file to cache")
         } else {
-            EVURLCache.debugLog("CACHE save file to Cache  : \(storagePath)");
+            EVURLCache.debugLog("CACHE save file to Cache  : \(storagePath)")
             // prevent iCloud backup
             if !EVURLCache.addSkipBackupAttributeToItemAtURL(NSURL(fileURLWithPath: storagePath)) {
-                EVURLCache.debugLog("Could not set the do not backup attribute");
+                EVURLCache.debugLog("Could not set the do not backup attribute")
             }
         }
     }
 
     private func cacheItemExpired(request: NSURLRequest, storagePath: String) -> Bool {
         // Max cache age for request
-        let maxAge:String = request.valueForHTTPHeaderField(EVURLCache.URLCACHE_EXPIRATION_AGE_KEY) ?? EVURLCache.MAX_AGE
+        let maxAge: String = request.valueForHTTPHeaderField(EVURLCache.URLCACHE_EXPIRATION_AGE_KEY) ?? EVURLCache.MAX_AGE
 
         do {
             let attributes = try NSFileManager.defaultManager().attributesOfItemAtPath(storagePath)
-            if let modDate:NSDate = attributes[NSFileModificationDate] as? NSDate {
+            if let modDate: NSDate = attributes[NSFileModificationDate] as? NSDate {
                 // Test if the file is older than the max age
                 if let threshold: NSTimeInterval = Double(maxAge) {
-                    let modificationTimeSinceNow:NSTimeInterval? = -modDate.timeIntervalSinceNow
+                    let modificationTimeSinceNow: NSTimeInterval? = -modDate.timeIntervalSinceNow
                     return modificationTimeSinceNow > threshold
                 }
             }
@@ -202,7 +202,7 @@ public class EVURLCache : NSURLCache {
         if !NSFileManager.defaultManager().fileExistsAtPath(storagePath ?? "") {
             storagePath = nil
         }
-        return storagePath;
+        return storagePath
     }
 
     // build up the complete storrage path for a request plus root folder.
@@ -223,9 +223,13 @@ public class EVURLCache : NSURLCache {
 
         // Without an extension it's treated as a folder and the file will be called index.html
         if let storageFile: String = localUrl.componentsSeparatedByString("/").last {
-            if !storageFile.containsString(".")  {
+            if !storageFile.containsString(".") {
                 localUrl = "/\(localUrl)/index.html"
             }
+        }
+
+        if let query = request.URL?.query {
+            localUrl = "\(localUrl)_\(query)"
         }
 
         // Force case insensitive compare (OSX filesystem can be case sensitive)
