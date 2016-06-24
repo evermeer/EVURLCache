@@ -83,6 +83,7 @@ public class EVURLCache: NSURLCache {
         // Is the file in the cache? If not, is the file in the PreCache?
         var storagePath: String = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._cacheDirectory)
         if !NSFileManager.defaultManager().fileExistsAtPath(storagePath) {
+            EVURLCache.debugLog("PRECACHE not found \(storagePath)")
             storagePath  = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._preCacheDirectory)
             if !NSFileManager.defaultManager().fileExistsAtPath(storagePath) {
                 EVURLCache.debugLog("CACHE not found \(storagePath)")
@@ -214,7 +215,7 @@ public class EVURLCache: NSURLCache {
         if let cacheKey = request.valueForHTTPHeaderField(URLCACHE_CACHE_KEY) {
             localUrl = "\(host)/\(cacheKey)"
         } else {
-            if let path = request.URL?.relativePath {
+            if let path = request.URL?.path {
                 localUrl = "\(host)\(path)"
             } else {
                 NSLog("WARNING: Unable to get the path from the request: \(request)")
