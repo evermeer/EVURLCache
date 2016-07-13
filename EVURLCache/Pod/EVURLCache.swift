@@ -80,11 +80,10 @@ public class EVURLCache: NSURLCache {
             return nil
         }
 
-        // Is the file in the cache? If not, is the file in the PreCache?
-        var storagePath: String = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._cacheDirectory)
+        let storagePath = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._cacheDirectory) ?? ""
         if !NSFileManager.defaultManager().fileExistsAtPath(storagePath) {
             EVURLCache.debugLog("PRECACHE not found \(storagePath)")
-            storagePath  = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._preCacheDirectory)
+            let storagePath = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._preCacheDirectory) ?? ""
             if !NSFileManager.defaultManager().fileExistsAtPath(storagePath) {
                 EVURLCache.debugLog("CACHE not found \(storagePath)")
                 return nil
@@ -133,7 +132,7 @@ public class EVURLCache: NSURLCache {
         // check if caching is allowed
         if request.cachePolicy == NSURLRequestCachePolicy.ReloadIgnoringCacheData {
             // If the file is in the PreCache folder, then we do want to save a copy in case we are without internet connection
-            let storagePath: String = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._preCacheDirectory)
+            let storagePath = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._preCacheDirectory) ?? ""
             if !NSFileManager.defaultManager().fileExistsAtPath(storagePath) {
                 EVURLCache.debugLog("CACHE not storing file, it's not allowed by the cachePolicy : \(request.URL)")
                 return
@@ -142,7 +141,7 @@ public class EVURLCache: NSURLCache {
         }
 
         // create storrage folder
-        let storagePath: String = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._cacheDirectory)
+        let storagePath: String = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._cacheDirectory) ?? ""
         if var storageDirectory: String = NSURL(fileURLWithPath: "\(storagePath)").URLByDeletingLastPathComponent?.absoluteString.stringByRemovingPercentEncoding {
             do {
                 if storageDirectory.hasPrefix("file:") {
@@ -207,9 +206,14 @@ public class EVURLCache: NSURLCache {
     }
 
     // build up the complete storrage path for a request plus root folder.
-    public static func storagePathForRequest(request: NSURLRequest, rootPath: String) -> String {
+    public static func storagePathForRequest(request: NSURLRequest, rootPath: String) -> String? {
         var localUrl: String!
         let host: String = request.URL?.host ?? "default"
+
+        let urlString = request.URL?.absoluteString ?? ""
+        if urlString.hasPrefix("data:") {
+            return nil
+        }
 
         // The filename could be forced by the remote server. This could be used to force multiple url's to the same cache file
         if let cacheKey = request.valueForHTTPHeaderField(URLCACHE_CACHE_KEY) {
@@ -219,6 +223,7 @@ public class EVURLCache: NSURLCache {
                 localUrl = "\(host)\(path)"
             } else {
                 NSLog("WARNING: Unable to get the path from the request: \(request)")
+                return nil
             }
         }
 
