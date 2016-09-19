@@ -7,6 +7,7 @@
 [![Issues](https://img.shields.io/github/issues-raw/evermeer/EVURLCache.svg?style=flat)](https://github.com/evermeer/EVURLCache/issues)
 [![Documentation](https://img.shields.io/badge/documented-100%-brightgreen.svg?style=flat)](http://cocoadocs.org/docsets/EVURLCache)
 [![Stars](https://img.shields.io/github/stars/evermeer/EVURLCache.svg?style=flat)](https://github.com/evermeer/EVURLCache/stargazers)
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/matteocrippa/awesome-swift)
 
 [![Version](https://img.shields.io/cocoapods/v/EVURLCache.svg?style=flat)](http://cocoadocs.org/docsets/EVURLCache)
 [![Language](https://img.shields.io/badge/language-swift2-f48041.svg?style=flat)](https://developer.apple.com/swift)
