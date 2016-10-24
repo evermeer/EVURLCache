@@ -223,7 +223,7 @@ open class EVURLCache: URLCache {
             if let modDate: Date = attributes[FileAttributeKey.modificationDate] as? Date {
                 // Test if the file is older than the max age
                 if let threshold: TimeInterval = Double(maxAge) {
-                    let modificationTimeSinceNow: TimeInterval? = -modDate.timeIntervalSinceNow
+                    let modificationTimeSinceNow: TimeInterval = -modDate.timeIntervalSinceNow
                     return modificationTimeSinceNow > threshold
                 }
             }
