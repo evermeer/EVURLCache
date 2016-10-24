@@ -18,6 +18,7 @@
 		7F4E25AD1C11A5C6009494A8 /* OSXcompileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4E25AC1C11A5C6009494A8 /* OSXcompileTest.swift */; };
 		7F4E25B21C11A5D0009494A8 /* EVURLCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4A0D611BEE497100059923 /* EVURLCache.swift */; };
 		7F649BBD1CCE49C0007C398F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF79271CCD0A6A0085E6E4 /* Reachability.swift */; };
+		7F69B95B1DBCED230000B9D3 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = 7F69B95A1DBCED230000B9D3 /* .swift-version */; };
 		7FFF79281CCD0A6A0085E6E4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF79271CCD0A6A0085E6E4 /* Reachability.swift */; };
 		8ECDF9DD6ED38CDFCBAE4F3F /* Pods_OSXcompileTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81C12CCF04AF23300938DC5 /* Pods_OSXcompileTest.framework */; };
 		C65B38F18FC73826FCD2A7B6 /* Pods_EVURLCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7566676951737F7DE11E9363 /* Pods_EVURLCache.framework */; };
@@ -46,6 +47,7 @@
 		7F4E25AA1C11A5C6009494A8 /* OSXcompileTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSXcompileTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F4E25AC1C11A5C6009494A8 /* OSXcompileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSXcompileTest.swift; sourceTree = "<group>"; };
 		7F4E25AE1C11A5C6009494A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F69B95A1DBCED230000B9D3 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
 		7FFF79271CCD0A6A0085E6E4 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Pod/Reachability.swift; sourceTree = "<group>"; };
 		C2CF2074981B9568E99CB19C /* Pods-OSXcompileTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSXcompileTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OSXcompileTest/Pods-OSXcompileTest.debug.xcconfig"; sourceTree = "<group>"; };
 		CD76B9911492321A2FCCD8BE /* Pods-EVURLCache.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVURLCache.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EVURLCache/Pods-EVURLCache.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				7F4A0D6C1BF1D4C200059923 /* README.md */,
 				7F4A0D6D1BF1D4EE00059923 /* .gitignore */,
 				7F4A41D61BF1F5BF00969D1F /* .gitattributes */,
+				7F69B95A1DBCED230000B9D3 /* .swift-version */,
 				7F4A0D6E1BF1D4EE00059923 /* .travis.yml */,
 				7F4A0D671BEF9F0700059923 /* EVURLCache.podspec */,
 				7F4A0D681BEF9F0700059923 /* LICENSE */,
@@ -245,6 +248,7 @@
 				7F4A0D591BEE481400059923 /* LaunchScreen.storyboard in Resources */,
 				7F4A0D561BEE481400059923 /* Assets.xcassets in Resources */,
 				7F4A0D541BEE481400059923 /* Main.storyboard in Resources */,
+				7F69B95B1DBCED230000B9D3 /* .swift-version in Resources */,
 				7F4A0D6B1BEFE4F400059923 /* PreCache in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
