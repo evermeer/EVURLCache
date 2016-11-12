@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "EVURLCache"
-s.version      = "3.0.2"
+s.version      = "3.2.0"
 s.summary      = "NSURLCache subclass for handeling all web requests that use NSURLRequest"
 s.description  = "This is a NSURLCache subclass for handeling all web requests that use NSURLRequest. (This includes UIWebView)"
 s.homepage     = "https://github.com/evermeer/EVURLCache"
@@ -34,7 +34,8 @@ s.license      = { :type => "MIT", :file => "LICENSE" }
 #  profile URL.
 #
 
-s.authors    = {"evermeer" => "edwin@evict.nl"}
+s.author    = "evermeer"
+s.authors   = { 'Edwin Vermeer' => 'edwin@evict.nl' }
 s.social_media_url   = "http://twitter.com/evermeer"
 
 # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

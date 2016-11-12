@@ -48,6 +48,7 @@ open class EVURLCache: URLCache {
     open static var _cacheDirectory: String!
     open static var _preCacheDirectory: String!
     open static var RECREATE_CACHE_RESPONSE = true // There is a difrence between unarchiving and recreating. I have to find out what.
+    open static var IGNORE_CACHE_CONTROL = false // By default respect the cache control (and pragma) what is returned by the server
     fileprivate static var _filter = { _ in return true } as ((_ request: URLRequest) -> Bool)
 
     // Activate EVURLCache
@@ -156,20 +157,21 @@ open class EVURLCache: URLCache {
         }
 
         // check if caching is allowed according to the response Cache-Control or Pragma header
-        if let httpResponse = cachedResponse.response as? HTTPURLResponse {
-            if let cacheControl = httpResponse.allHeaderFields["Cache-Control"] as? String {
-                if cacheControl.lowercased().contains("no-cache")  || cacheControl.lowercased().contains("no-store") {
-                    shouldSkipCache = "response cache control"
+        if !EVURLCache.IGNORE_CACHE_CONTROL {
+            if let httpResponse = cachedResponse.response as? HTTPURLResponse {
+                if let cacheControl = httpResponse.allHeaderFields["Cache-Control"] as? String {
+                    if cacheControl.lowercased().contains("no-cache")  || cacheControl.lowercased().contains("no-store") {
+                        shouldSkipCache = "response cache control"
+                    }
                 }
-            }
 
-            if let cacheControl = httpResponse.allHeaderFields["Pragma"] as? String {
-                if cacheControl.lowercased().contains("no-cache") {
-                    shouldSkipCache = "response pragma"
+                if let cacheControl = httpResponse.allHeaderFields["Pragma"] as? String {
+                    if cacheControl.lowercased().contains("no-cache") {
+                        shouldSkipCache = "response pragma"
+                    }
                 }
             }
         }
-
         if shouldSkipCache != nil {
             // If the file is in the PreCache folder, then we do want to save a copy in case we are without internet connection
             let storagePath = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._preCacheDirectory) ?? ""
