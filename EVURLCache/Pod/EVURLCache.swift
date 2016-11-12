@@ -193,11 +193,20 @@ public class EVURLCache: NSURLCache {
             }
         }
     }
-
+    
     private func cacheItemExpired(request: NSURLRequest, storagePath: String) -> Bool {
         // Max cache age for request
         let maxAge: String = request.valueForHTTPHeaderField("Access-Control-Max-Age") ?? EVURLCache.MAX_AGE
-
+        
+        guard let maxAgeInterval: NSTimeInterval = Double(maxAge) else {
+            EVURLCache.debugLog("MAX_AGE value string is incorrect")
+            return false
+        }
+        
+        return EVURLCache.fileExpired(storagePath, maxAge: maxAgeInterval)
+    }
+    
+    private static func fileExpired(storagePath: String, maxAge: Double) -> Bool {
         do {
             let attributes = try NSFileManager.defaultManager().attributesOfItemAtPath(storagePath)
             if let modDate: NSDate = attributes[NSFileModificationDate] as? NSDate {
@@ -208,11 +217,26 @@ public class EVURLCache: NSURLCache {
                 }
             }
         } catch {}
-
+        
         return false
     }
-
-
+    
+    private static func cleanupPath(path: String) -> String {
+        var result = path
+        
+        if path.hasPrefix("file:") {
+            result = path.substringFromIndex(path.startIndex.advancedBy(5))
+            var prevPath = String()
+            
+            while prevPath != result {
+                prevPath = result
+                result = result.stringByReplacingOccurrencesOfString("//", withString: "/")
+            }
+        }
+        
+        return result
+    }
+    
     // return the path if the file for the request is in the PreCache or Cache.
     public static func storagePathForRequest(request: NSURLRequest) -> String? {
         var storagePath: String? = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._cacheDirectory)
@@ -283,7 +307,38 @@ public class EVURLCache: NSURLCache {
         }
         return false
     }
-
+    
+    // Removes all files from _cacheDirectory with modification date more than MAX_AGE ago
+    static func cleanExpiredCaches() {
+        let defaultFileManager = NSFileManager.defaultManager()
+        
+        let storagePath = EVURLCache._cacheDirectory
+        let storageDirectory: String = cleanupPath(storagePath)
+        
+        guard let fileEnumerator = defaultFileManager.enumeratorAtPath(storageDirectory) else { return }
+        guard let maxAge: NSTimeInterval = Double(EVURLCache.MAX_AGE) else {
+            EVURLCache.debugLog("MAX_AGE value string is incorrect")
+            return
+        }
+        
+        for url in fileEnumerator {
+            if let filePath = url as? String {
+                let fullPath = storageDirectory + filePath
+                var isDirectory = ObjCBool(false)
+                defaultFileManager.fileExistsAtPath(fullPath, isDirectory: &isDirectory)
+                
+                if !isDirectory.boolValue && fileExpired(fullPath, maxAge: maxAge) {
+                    do {
+                        try defaultFileManager.removeItemAtPath(fullPath)
+                        EVURLCache.debugLog("Removed expired cache file: \(fullPath)")
+                    } catch {
+                        EVURLCache.debugLog("Failed to remove expired cache file: \(fullPath)")
+                    }
+                }
+            }
+        }
+    }
+    
     // Check if we have a network connection
     private static func networkAvailable() -> Bool {
         let reachability: Reachability
