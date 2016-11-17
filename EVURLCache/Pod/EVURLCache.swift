@@ -328,7 +328,7 @@ open class EVURLCache: URLCache {
     
     
     // Removes all files from _cacheDirectory with modification date more than MAX_AGE ago
-    static func cleanExpiredCaches() {
+    open static func cleanExpiredCaches() {
         let defaultFileManager = FileManager.default
         
         let storagePath = EVURLCache._cacheDirectory
