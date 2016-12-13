@@ -14,22 +14,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
-        // Uncomment the 2 lines below and comment the line below that to see an other nice test
-//        EVURLCache.RECREATE_CACHE_RESPONSE = false
-//        if let url = NSURL(string: "https://m.promobutler.be/api/purge-publication?publicationId=1040516&url=https%3A%2F%2Fm.promobutler.be%2Fnl%2Ffolders%2Fwoodtex%3Ffid%3D65209%26embedded%3Dtrue&linksVersion=29") {
-//        if let url = NSURL(string: "http://game.zorropk.com/gamenow/xiao5haiyanglixianji/") {
+        //EVURLCache.RECREATE_CACHE_RESPONSE = false // This flag is only used for debuging the small difference between recreating a response and unarchiving a response. Recreating (which is the default) seems to be working best...
         if let url = URL(string: "http://evict.nl") {
             NSLog("navigating to \(url)")
             webView.loadRequest(URLRequest(url: url))
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
+    
+    
+// Other test url's that were used to debug specific situations
+//    http://game.zorropk.com/gamenow/xiao5haiyanglixianji/
+//    http://www.newser.com/story/229485/aetna-doing-something-about-workers-student-loans.html
+//    http://www.beckershospitalreview.com/payer-issues/when-the-doctor-orders-time-in-the-park-humana-metcare-partner-for-nature-driven-prescriptions.html
+//    http://www.beckershospitalreview.com/healthcare-information-technology/10-largest-hipaa-settlement-fines.html
+//    http://m.newser.com/story/229485/aetna-doing-something-about-workers-student-loans.html
+//    https://m.promobutler.be/api/purge-publication?publicationId=1040516&url=https%3A%2F%2Fm.promobutler.be%2Fnl%2Ffolders%2Fwoodtex%3Ffid%3D65209%26embedded%3Dtrue&linksVersion=29
 }
