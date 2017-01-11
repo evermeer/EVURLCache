@@ -5,12 +5,12 @@
  -->
 [![Build Status](https://travis-ci.org/evermeer/EVURLCache.svg?style=flat)](https://travis-ci.org/evermeer/EVURLCache)
 [![Issues](https://img.shields.io/github/issues-raw/evermeer/EVURLCache.svg?style=flat)](https://github.com/evermeer/EVURLCache/issues)
-[![Documentation](https://img.shields.io/badge/documented-100%-brightgreen.svg?style=flat)](http://cocoadocs.org/docsets/EVURLCache)
+[![Documentation](https://img.shields.io/badge/documented-100%25-brightgreen.svg?style=flat)](http://cocoadocs.org/docsets/EVURLCache)
 [![Stars](https://img.shields.io/github/stars/evermeer/EVURLCache.svg?style=flat)](https://github.com/evermeer/EVURLCache/stargazers)
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/matteocrippa/awesome-swift)
 
 [![Version](https://img.shields.io/cocoapods/v/EVURLCache.svg?style=flat)](http://cocoadocs.org/docsets/EVURLCache)
-[![Language](https://img.shields.io/badge/language-swift2-f48041.svg?style=flat)](https://developer.apple.com/swift)
+[![Language](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift)
 [![Platform](https://img.shields.io/cocoapods/p/EVURLCache.svg?style=flat)](http://cocoadocs.org/docsets/EVURLCache)
 [![Support](https://img.shields.io/badge/support-iOS%208%2B%20|%20OSX%2010.9+%20|%20WOS%202+|%20TVOS%209+-blue.svg?style=flat)](https://www.apple.com/nl/ios/)
 [![License](https://img.shields.io/cocoapods/l/EVURLCache.svg?style=flat)](http://cocoadocs.org/docsets/EVURLCache)
