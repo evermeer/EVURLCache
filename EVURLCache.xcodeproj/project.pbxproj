@@ -213,7 +213,7 @@
 					7F4A0D4A1BEE481400059923 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = WTH4QGEA23;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					7F4E25A91C11A5C6009494A8 = {
 						CreatedOnToolsVersion = 7.1.1;
