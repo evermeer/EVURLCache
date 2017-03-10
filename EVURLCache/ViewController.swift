@@ -8,19 +8,28 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView.delegate = self
         //EVURLCache.RECREATE_CACHE_RESPONSE = false // This flag is only used for debuging the small difference between recreating a response and unarchiving a response. Recreating (which is the default) seems to be working best...
-        if let url = URL(string: "http://evict.nl") {
+        if let url = URL(string: "http://www.newser.com/story/229485/aetna-doing-something-about-workers-student-loans.html") {
             NSLog("navigating to \(url)")
-            webView.loadRequest(URLRequest(url: url))
+            webView.loadRequest(URLRequest(url: url))            
         }
     }
     
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if let redirectURL = EVURLCache.shouldRedirect(request: request) {
+            let r = URLRequest(url: redirectURL)
+            webView.loadRequest(r)
+            return false
+        }
+        return true
+    }
     
     
 // Other test url's that were used to debug specific situations

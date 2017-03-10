@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F06B2451E38C6FF00925047 /* EVURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06B2441E38C6FF00925047 /* EVURLProtocol.swift */; };
 		7F4A0D4F1BEE481400059923 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4A0D4E1BEE481400059923 /* AppDelegate.swift */; };
 		7F4A0D511BEE481400059923 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4A0D501BEE481400059923 /* ViewController.swift */; };
 		7F4A0D541BEE481400059923 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F4A0D521BEE481400059923 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		05EE26FC72733C70FFA7F10C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		144C37334311C3DEAAAE46C3 /* Pods-OSXcompileTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSXcompileTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-OSXcompileTest/Pods-OSXcompileTest.release.xcconfig"; sourceTree = "<group>"; };
 		7566676951737F7DE11E9363 /* Pods_EVURLCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVURLCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F06B2441E38C6FF00925047 /* EVURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EVURLProtocol.swift; path = Pod/EVURLProtocol.swift; sourceTree = "<group>"; };
 		7F4A0D4B1BEE481400059923 /* EVURLCache.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVURLCache.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F4A0D4E1BEE481400059923 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F4A0D501BEE481400059923 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				7F4A0D611BEE497100059923 /* EVURLCache.swift */,
 				7FFF79271CCD0A6A0085E6E4 /* Reachability.swift */,
+				7F06B2441E38C6FF00925047 /* EVURLProtocol.swift */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F4A0D511BEE481400059923 /* ViewController.swift in Sources */,
+				7F06B2451E38C6FF00925047 /* EVURLProtocol.swift in Sources */,
 				7F4A0D621BEE497100059923 /* EVURLCache.swift in Sources */,
 				7FFF79281CCD0A6A0085E6E4 /* Reachability.swift in Sources */,
 				7F4A0D4F1BEE481400059923 /* AppDelegate.swift in Sources */,

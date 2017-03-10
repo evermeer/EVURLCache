@@ -60,6 +60,8 @@ open class EVURLCache: URLCache {
         let urlCache = EVURLCache(memoryCapacity: 1<<MAX_FILE_SIZE, diskCapacity: 1<<MAX_CACHE_SIZE, diskPath: _cacheDirectory)
 
         URLCache.shared = urlCache
+        URLProtocol.registerClass(EVURLProtocol.self)
+
     }
 
     open class func filter (_ filterFor: @escaping ((_ request: URLRequest) -> Bool)) {
@@ -76,9 +78,24 @@ open class EVURLCache: URLCache {
             print("\(dateFormatter.string(from: Date())) \(process.processName))[\(process.processIdentifier):\(threadId)] \((filename as NSString).lastPathComponent)(\(line)) \(funcname):\r\t\(object)\n")
         }
     }
+    
+    open static func shouldRedirect(request: URLRequest) -> URL? {
+        if let cache = EVURLCache.cachedResponse(for: request) {
+            if (cache.response as? HTTPURLResponse)?.statusCode == 302 {
+                let headerFiels: [String:String] = (cache.response as? HTTPURLResponse)?.allHeaderFields as! [String : String]
+                let redirectTo = headerFiels["Location"] ?? ""
+                return URL(string: redirectTo)
+            }
+        }
+        return nil
+    }
 
     // Will be called by a NSURLConnection when it's wants to know if there is something in the cache.
     open override func cachedResponse(for request: URLRequest) -> CachedURLResponse? {
+        return EVURLCache.cachedResponse(for: request)
+    }
+    
+    open static func cachedResponse(for request: URLRequest) -> CachedURLResponse? {
         guard let url = request.url else {
             EVURLCache.debugLog("CACHE not allowed for nil URLs")
             return nil
@@ -88,7 +105,7 @@ open class EVURLCache: URLCache {
             EVURLCache.debugLog("CACHE not allowed for empty URLs")
             return nil
         }
-
+        
         if !EVURLCache._filter(request) {
             EVURLCache.debugLog("CACHE skipped because of filter")
             return nil
@@ -100,6 +117,7 @@ open class EVURLCache: URLCache {
             return nil
         }
 
+        // Check if there is a cache for this request
         let storagePath = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._cacheDirectory) ?? ""
         if !FileManager.default.fileExists(atPath: storagePath) {
             EVURLCache.debugLog("PRECACHE not found \(storagePath)")
@@ -116,6 +134,7 @@ open class EVURLCache: URLCache {
                 let maxAge: String = request.value(forHTTPHeaderField: "Access-Control-Max-Age") ?? EVURLCache.MAX_AGE
                 EVURLCache.debugLog("CACHE item older than \(maxAge) seconds")
                 return nil
+                
             }
         }
 
@@ -126,6 +145,21 @@ open class EVURLCache: URLCache {
             // I have to find out the difrence. For now I will let the developer checkt which version to use
             if EVURLCache.RECREATE_CACHE_RESPONSE {
                 // This works for most sites, but aperently not for the game as in the alternate url you see in ViewController
+                if (response.response as? HTTPURLResponse)?.statusCode == 302 {
+                    
+                    let headerFiels: [String:String] = (response.response as? HTTPURLResponse)?.allHeaderFields as! [String : String]
+                    let redirectTo = headerFiels["Location"] ?? ""
+                    print("Redirecting from: \(response.response.url?.absoluteString ?? "")\nto: \(redirectTo)")
+                    
+                    // returning the actual redirect response
+ //                   let r = URLResponse(url: URL(string: redirectTo)!, mimeType: response.response.mimeType, expectedContentLength: response.data.count, textEncodingName: response.response.textEncodingName)
+//                    return CachedURLResponse(response: r, data: response.data, userInfo: response.userInfo, storagePolicy: .allowed)
+                    
+                    // returning the response of the redirected url
+                    let redirectRequest = URLRequest(url: URL(string: redirectTo)!, cachePolicy: request.cachePolicy, timeoutInterval: request.timeoutInterval)
+                    return self.cachedResponse(for: redirectRequest)
+                }
+            
                 let r = URLResponse(url: response.response.url!, mimeType: response.response.mimeType, expectedContentLength: response.data.count, textEncodingName: response.response.textEncodingName)
                 return CachedURLResponse(response: r, data: response.data, userInfo: response.userInfo, storagePolicy: .allowed)
             }
@@ -197,7 +231,7 @@ open class EVURLCache: URLCache {
         }
 
         if let previousResponse = NSKeyedUnarchiver.unarchiveObject(withFile: storagePath) as? CachedURLResponse {
-            if previousResponse.data == cachedResponse.data && !cacheItemExpired(request, storagePath: storagePath) {
+            if previousResponse.data == cachedResponse.data && !EVURLCache.cacheItemExpired(request, storagePath: storagePath) {
                 EVURLCache.debugLog("CACHE not rewriting stored file")
                 return
             }
@@ -216,7 +250,7 @@ open class EVURLCache: URLCache {
         }
     }
     
-    fileprivate func cacheItemExpired(_ request: URLRequest, storagePath: String) -> Bool {
+    fileprivate static func cacheItemExpired(_ request: URLRequest, storagePath: String) -> Bool {
         // Max cache age for request
         let maxAge: String = request.value(forHTTPHeaderField: "Access-Control-Max-Age") ?? EVURLCache.MAX_AGE
         
@@ -273,7 +307,7 @@ open class EVURLCache: URLCache {
 
     // build up the complete storrage path for a request plus root folder.
     open static func storagePathForRequest(_ request: URLRequest, rootPath: String) -> String? {
-        var localUrl: String!
+        var localUrl: String = ""
         let host: String = request.url?.host ?? "default"
 
         let urlString = request.url?.absoluteString ?? ""
@@ -285,7 +319,7 @@ open class EVURLCache: URLCache {
         if let cacheKey = request.value(forHTTPHeaderField: URLCACHE_CACHE_KEY) {
             localUrl = "\(host)/\(cacheKey)"
         } else {
-            if let path = request.url?.path {
+            if let path: String = request.url?.path {
                 localUrl = "\(host)\(path)"
             } else {
                 NSLog("WARNING: Unable to get the path from the request: \(request)")
