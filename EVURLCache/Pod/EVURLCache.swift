@@ -321,7 +321,13 @@ open class EVURLCache: URLCache {
         } else {
             if let path: String = request.url?.path {
                 localUrl = "\(host)\(path)"
-            } else {
+            }
+
+            if let query = request.URL?.query, let baseURL = localUrl {
+                localUrl = "\(baseURL)/\(query)"
+            }
+
+            if localUrl == nil {
                 NSLog("WARNING: Unable to get the path from the request: \(request)")
                 return nil
             }
