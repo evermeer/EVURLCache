@@ -60,7 +60,9 @@ open class EVURLCache: URLCache {
         let urlCache = EVURLCache(memoryCapacity: 1<<MAX_FILE_SIZE, diskCapacity: 1<<MAX_CACHE_SIZE, diskPath: _cacheDirectory)
 
         URLCache.shared = urlCache
-        URLProtocol.registerClass(EVURLProtocol.self)
+        
+        // TODO: Fix this protocol so that redirects are handled but normal pages are not influenced.
+        //URLProtocol.registerClass(EVURLProtocol.self)
 
     }
 
