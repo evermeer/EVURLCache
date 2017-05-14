@@ -180,7 +180,7 @@ open class EVURLCache: URLCache {
         }
         if let httpResponse = cachedResponse.response as? HTTPURLResponse {
             if httpResponse.statusCode >= 400 {
-                EVURLCache.debugLog("CACHE Do not cache error \(httpResponse.statusCode) page for : \(request.url) \(httpResponse.debugDescription)")
+                EVURLCache.debugLog("CACHE Do not cache error \(httpResponse.statusCode) page for : \(request.url?.absoluteString ?? "") \(httpResponse.debugDescription)")
                 return
             }
         }
@@ -212,10 +212,10 @@ open class EVURLCache: URLCache {
             // If the file is in the PreCache folder, then we do want to save a copy in case we are without internet connection
             let storagePath = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._preCacheDirectory) ?? ""
             if !FileManager.default.fileExists(atPath: storagePath) {
-                EVURLCache.debugLog("CACHE not storing file, it's not allowed by the \(shouldSkipCache) : \(request.url)")
+                EVURLCache.debugLog("CACHE not storing file, it's not allowed by the \(shouldSkipCache.debugDescription) : \(request.url?.absoluteString ?? "")")
                 return
             }
-            EVURLCache.debugLog("CACHE file in PreCache folder, overriding \(shouldSkipCache) : \(request.url)")
+            EVURLCache.debugLog("CACHE file in PreCache folder, overriding \(shouldSkipCache.debugDescription) : \(request.url?.absoluteString ?? "")")
         }
 
         // create storrage folder
