@@ -304,7 +304,7 @@ open class EVURLCache: URLCache {
         if !FileManager.default.fileExists(atPath: storagePath ?? "") {
             storagePath = nil
         }
-        return storagePath
+        return storagePath?.removingPercentEncoding
     }
 
     // build up the complete storrage path for a request plus root folder.
@@ -349,7 +349,7 @@ open class EVURLCache: URLCache {
         
         // Cleanup
         localUrl = cleanupPath(path: localUrl)
-        return localUrl
+        return localUrl.removingPercentEncoding
     }
     
     open static func addSkipBackupAttributeToItemAtURL(_ url: URL) -> Bool {
