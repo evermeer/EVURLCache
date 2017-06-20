@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "EVURLCache"
-s.version      = "3.3.0"
+s.version      = "3.3.1"
 s.summary      = "NSURLCache subclass for handeling all web requests that use NSURLRequest"
 s.description  = "This is a NSURLCache subclass for handeling all web requests that use NSURLRequest. (This includes UIWebView)"
 s.homepage     = "https://github.com/evermeer/EVURLCache"
