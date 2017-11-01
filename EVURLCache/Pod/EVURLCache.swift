@@ -223,7 +223,7 @@ open class EVURLCache: URLCache {
         if var storageDirectory: String = NSURL(fileURLWithPath: "\(storagePath)").deletingLastPathComponent?.absoluteString.removingPercentEncoding {
             do {
                 if storageDirectory.hasPrefix("file:") {
-                    storageDirectory = String(storageDirectory.suffix(from: storageDirectory.characters.index(storageDirectory.startIndex, offsetBy: 5)))
+                    storageDirectory = String(storageDirectory.suffix(from: storageDirectory.index(storageDirectory.startIndex, offsetBy: 5)))
                 }
                 try FileManager.default.createDirectory(atPath: storageDirectory, withIntermediateDirectories: true, attributes: nil)
             } catch let error as NSError {
