@@ -175,9 +175,8 @@ open class EVURLCache: URLCache {
 
     // Will be called by NSURLConnection when a request is complete.
     open override func storeCachedResponse(_ cachedResponse: CachedURLResponse, for request: URLRequest) {
-        if !EVURLCache._filter(request) {
-            return
-        }
+
+        // errors are never cached
         if let httpResponse = cachedResponse.response as? HTTPURLResponse {
             if httpResponse.statusCode >= 400 {
                 EVURLCache.debugLog("CACHE Do not cache error \(httpResponse.statusCode) page for : \(request.url?.absoluteString ?? "") \(httpResponse.debugDescription)")
@@ -186,7 +185,12 @@ open class EVURLCache: URLCache {
         }
 
         var shouldSkipCache: String? = nil
-
+        
+        // You could create your own filter
+        if !EVURLCache._filter(request) {
+            shouldSkipCache = "is in filter"
+        }
+        
         // check if caching is allowed according to the request
         if request.cachePolicy == NSURLRequest.CachePolicy.reloadIgnoringCacheData {
             shouldSkipCache = "request cache policy"
