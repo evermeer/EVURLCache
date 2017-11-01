@@ -227,7 +227,7 @@ open class EVURLCache: URLCache {
         if var storageDirectory: String = NSURL(fileURLWithPath: "\(storagePath)").deletingLastPathComponent?.absoluteString.removingPercentEncoding {
             do {
                 if storageDirectory.hasPrefix("file:") {
-                    storageDirectory = storageDirectory.substring(from: storageDirectory.characters.index(storageDirectory.startIndex, offsetBy: 5))
+                    storageDirectory = String(storageDirectory.suffix(from: storageDirectory.index(storageDirectory.startIndex, offsetBy: 5)))
                 }
                 try FileManager.default.createDirectory(atPath: storageDirectory, withIntermediateDirectories: true, attributes: nil)
             } catch let error as NSError {
@@ -286,7 +286,7 @@ open class EVURLCache: URLCache {
         var result = path
         
         if path.hasPrefix("file:") {
-            result = path.substring(from: path.index(path.startIndex, offsetBy: 5))
+            result = String(path.suffix(from: path.index(path.startIndex, offsetBy: 5)))
             var prevResult = String()
             
             while prevResult != result {
