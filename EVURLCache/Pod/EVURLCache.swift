@@ -168,11 +168,31 @@ open class EVURLCache: URLCache {
             // This works for the game, but not for my site.
             return response
         } else {
-            EVURLCache.debugLog("The file is probably not put in the local path using NSKeyedArchiver \(storagePath)")
+            // File was not written using the NSKeyedUnarchiver. Will return the raw file as the cache response
+            if let content:NSData = NSData(contentsOfFile: storagePath) {
+                let mimeType = getMimeType(storagePath)
+                let response = URLResponse(url: url, mimeType: mimeType, expectedContentLength: content.length, textEncodingName: nil)
+                EVURLCache.debugLog("CACHE returning cache response: mimeType = \(mimeType), path = \(storagePath)");
+                return CachedURLResponse(response: response, data: content as Data)
+            }
+            EVURLCache.debugLog("CACHE could not be read from \(storagePath)")
         }
         return nil
     }
 
+    // Make sure the correct mimetype is returned from the cache
+    private static func getMimeType(_ path: String) -> String {
+        var mimeType = "text/html"
+        if let fileExtension: String = path.components(separatedBy: ".").last {
+            if let uti: CFString = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, fileExtension as NSString, nil)?.takeRetainedValue() {
+                if let type = UTTypeCopyPreferredTagWithClass(uti, kUTTagClassMIMEType)?.takeRetainedValue() {
+                    mimeType = type as String
+                }
+            }
+        }
+        return mimeType
+    }
+    
     // Will be called by NSURLConnection when a request is complete.
     open override func storeCachedResponse(_ cachedResponse: CachedURLResponse, for request: URLRequest) {
 
