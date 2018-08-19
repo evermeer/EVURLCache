@@ -22,7 +22,7 @@ static NSString* _preCacheDirectory;
 {
     // set caching paths
     NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES );
-    NSString *documentDirectory = [documentDirectories objectAtIndex:0];
+    NSString *documentDirectory = documentDirectories[0];
     _cacheDirectory = [documentDirectory stringByAppendingPathComponent:CACHE_FOLDER]; 
     mkdir( [_cacheDirectory UTF8String], 0700 );
     _preCacheDirectory = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:PRE_CACHE_FOLDER];
@@ -44,18 +44,18 @@ static NSString* _preCacheDirectory;
     
     if(request.URL == nil)
     {
-        NSLog(@"CACHE not allowed for NULL urls");
+        [EVURLCache log:@"CACHE not allowed for NULL urls"];
         return nil;
     }
     if(request.URL.absoluteString.length == 0)
     {
-        NSLog(@"CACHE not allowed for emtpy urls");
+        [EVURLCache log:@"CACHE not allowed for emtpy urls"];
         return nil;
     }
     // is caching allowed
     if(request.cachePolicy == NSURLRequestReloadIgnoringCacheData || [request.URL.absoluteString hasPrefix:@"file:/"] || ([request.URL.absoluteString hasPrefix:@"data:"] && [EVURLCache networkAvailable]))
     {
-        NSLog(@"CACHE not allowed for url %@", request.URL.absoluteString);
+        [EVURLCache log:@"CACHE not allowed for url %@", request.URL.absoluteString];
         return nil;
     }
     
@@ -67,7 +67,7 @@ static NSString* _preCacheDirectory;
         storagePath = [EVURLCache storagePathForRequest:request rootPath:_preCacheDirectory];
         if(![fileManager fileExistsAtPath:storagePath])
         {
-            NSLog(@"CACHE not found in %@", storagePath);
+            [EVURLCache log:@"CACHE not found in %@", storagePath];
             return nil;
         }
     }
@@ -85,9 +85,8 @@ static NSString* _preCacheDirectory;
             if(threshold != 0)
             {
                 NSTimeInterval modificationTimeSinceNow = -[modDate timeIntervalSinceNow];
-                if(modificationTimeSinceNow > threshold)
-                {
-                    NSLog(@"CACHE item older than %@ maxAgeHours", maxAge);
+                if(modificationTimeSinceNow > threshold){
+                    [EVURLCache log:@"CACHE item older than %@ maxAgeHours", maxAge];
                     return nil;
                 }
             }
@@ -98,7 +97,7 @@ static NSString* _preCacheDirectory;
     NSCachedURLResponse *response = [NSKeyedUnarchiver unarchiveObjectWithFile:storagePath];
     if(response != nil)
     {
-        NSLog(@"Returning cached data from %@", storagePath);
+        [EVURLCache log:@"Returning cached data from %@", storagePath];
         if(RECREATE_CACHE_RESPONSE)
         {
             NSURLResponse *r = [[NSURLResponse alloc] initWithURL:response.response.URL MIMEType:response.response.MIMEType expectedContentLength:response.data.length textEncodingName:response.response.textEncodingName];
@@ -106,7 +105,7 @@ static NSString* _preCacheDirectory;
         }
         return response;
     }else{
-        NSLog(@"The file is probably not put in the local path using NSKeyedArchiver %@", storagePath);
+    [EVURLCache log:@"The file is probably not put in the local path using NSKeyedArchiver %@", storagePath];
     }
     return nil;
 }
@@ -115,10 +114,10 @@ static NSString* _preCacheDirectory;
 -(void)storeCachedResponse:(NSCachedURLResponse*)cachedResponse forRequest:(nonnull NSURLRequest *)request
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSHTTPURLResponse *httpResponse = cachedResponse.response;
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) cachedResponse.response;
     if(httpResponse != nil && [httpResponse respondsToSelector:@selector(statusCode:)] && httpResponse.statusCode >= 400)
     {
-        NSLog(@"CACHE Do not cache error %li page for: %@", (long)httpResponse.statusCode, request.URL);
+        [EVURLCache log:@"CACHE Do not cache error %li page for: %@", (long)httpResponse.statusCode, request.URL];
         return;
     }
     
@@ -128,10 +127,10 @@ static NSString* _preCacheDirectory;
         NSString *storagePath = [EVURLCache storagePathForRequest:request rootPath:_preCacheDirectory];
         if(![fileManager fileExistsAtPath:storagePath])
         {
-            NSLog(@"CACHE not storing file, it's not allowed by the cachePolicy : %@", request.URL);
+            [EVURLCache log:@"CACHE not storing file, it's not allowed by the cachePolicy : %@", request.URL];
             return;
         }
-        NSLog(@"CACHE file in PreCache folder, overriding cachePolicy : %@", request.URL);
+        [EVURLCache log:@"CACHE file in PreCache folder, overriding cachePolicy : %@", request.URL];
     }
     
     // create storrage folder
@@ -145,16 +144,16 @@ static NSString* _preCacheDirectory;
         [fileManager createDirectoryAtPath:storageDirectory withIntermediateDirectories:true attributes:nil error:nil];
     }
     // save file
-    NSLog(@"Writing data to %@", storagePath);
+    [EVURLCache log:@"Writing data to %@", storagePath];
     if(![NSKeyedArchiver archiveRootObject:cachedResponse toFile:storagePath])
     {
-        NSLog(@"Could not write file to cache");
+        [EVURLCache log:@"Could not write file to cache"];
     }
     else
     {
         if(![EVURLCache addSkipBackupAttributeToItemAtURL:[NSURL fileURLWithPath:storagePath]])
         {
-            NSLog(@"Could not set the do not backup attribute");
+            [EVURLCache log:@"Could not set the do not backup attribute"];
         }
     }
 }
@@ -197,7 +196,7 @@ static NSString* _preCacheDirectory;
     }
     else
     {
-        NSLog(@"WARNING: Unable to get the path from the request: %@", request);
+        [EVURLCache log:@"WARNING: Unable to get the path from the request: %@", request];
         return @"";
     }
     
@@ -241,12 +240,12 @@ static NSString* _preCacheDirectory;
         // The attribute exists, we need to remove it
         int removeResult = removexattr(filePath, attrName, 0);
         if (removeResult == 0) {
-            NSLog(@"Removed extended attribute on file %@", URL);
+            [EVURLCache log:@"Removed extended attribute on file %@", URL];
         }
     }
     
     // Set the new key
-    return [URL setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:nil];
+    return [URL setResourceValue:@YES forKey:NSURLIsExcludedFromBackupKey error:nil];
 }
 
 +(BOOL)networkAvailable{
@@ -256,6 +255,15 @@ static NSString* _preCacheDirectory;
         return TRUE;
     }
     return FALSE;
+}
+
++ (void)log:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2){
+#if EVURLCACHE_LOGGING
+    va_list args;
+    va_start(args, format);
+    NSLogv(format, args);
+    va_end(args);
+#endif
 }
 
 @end

@@ -18,7 +18,9 @@
 #define CACHE_FOLDER @"/Cache/" // The folder in the Documents folder where cached files will be saved
 #define MAX_FILE_SIZE 24 // The maximum file size that will be cached (2^24 = 16MB)
 #define MAX_CACHE_SIZE 30
-#define LOGGING false
+#ifndef EVURLCACHE_LOGGING
+    #define EVURLCACHE_LOGGING false
+#endif
 #define FORCE_LOWECASE true
 #define RECREATE_CACHE_RESPONSE true
 
