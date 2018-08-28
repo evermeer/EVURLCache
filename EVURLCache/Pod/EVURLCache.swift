@@ -120,10 +120,10 @@ open class EVURLCache: URLCache {
         }
 
         // Check if there is a cache for this request
-        let storagePath = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._cacheDirectory) ?? ""
+        var storagePath = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._cacheDirectory) ?? ""
         if !FileManager.default.fileExists(atPath: storagePath) {
             EVURLCache.debugLog("CACHE not found \(storagePath)")
-            let storagePath = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._preCacheDirectory) ?? ""
+            storagePath = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._preCacheDirectory) ?? ""
             if !FileManager.default.fileExists(atPath: storagePath) {
                 EVURLCache.debugLog("PRECACHE not found \(storagePath)")
                 return nil
