@@ -22,8 +22,38 @@
 		7F69B95B1DBCED230000B9D3 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = 7F69B95A1DBCED230000B9D3 /* .swift-version */; };
 		7FFF79281CCD0A6A0085E6E4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF79271CCD0A6A0085E6E4 /* Reachability.swift */; };
 		8ECDF9DD6ED38CDFCBAE4F3F /* Pods_OSXcompileTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81C12CCF04AF23300938DC5 /* Pods_OSXcompileTest.framework */; };
+		BE1ECACC22538E7A00B779B5 /* EVURLCache_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = BE1ECACA22538E7A00B779B5 /* EVURLCache_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE1ECACF22538E7A00B779B5 /* EVURLCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1ECAC822538E7A00B779B5 /* EVURLCache.framework */; };
+		BE1ECAD022538E7A00B779B5 /* EVURLCache.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE1ECAC822538E7A00B779B5 /* EVURLCache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE1ECAD522538E9B00B779B5 /* EVURLCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4A0D611BEE497100059923 /* EVURLCache.swift */; };
+		BE1ECAD622538E9D00B779B5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF79271CCD0A6A0085E6E4 /* Reachability.swift */; };
+		BE1ECAD722538EA000B779B5 /* EVURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06B2441E38C6FF00925047 /* EVURLProtocol.swift */; };
 		C65B38F18FC73826FCD2A7B6 /* Pods_EVURLCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7566676951737F7DE11E9363 /* Pods_EVURLCache.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE1ECACD22538E7A00B779B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F4A0D431BEE481400059923 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE1ECAC722538E7A00B779B5;
+			remoteInfo = "EVURLCache-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BE1ECAD422538E7A00B779B5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BE1ECAD022538E7A00B779B5 /* EVURLCache.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		05EE26FC72733C70FFA7F10C /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +81,9 @@
 		7F4E25AE1C11A5C6009494A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F69B95A1DBCED230000B9D3 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
 		7FFF79271CCD0A6A0085E6E4 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Pod/Reachability.swift; sourceTree = "<group>"; };
+		BE1ECAC822538E7A00B779B5 /* EVURLCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EVURLCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE1ECACA22538E7A00B779B5 /* EVURLCache_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EVURLCache_iOS.h; sourceTree = "<group>"; };
+		BE1ECACB22538E7A00B779B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2CF2074981B9568E99CB19C /* Pods-OSXcompileTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSXcompileTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OSXcompileTest/Pods-OSXcompileTest.debug.xcconfig"; sourceTree = "<group>"; };
 		CD76B9911492321A2FCCD8BE /* Pods-EVURLCache.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVURLCache.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EVURLCache/Pods-EVURLCache.debug.xcconfig"; sourceTree = "<group>"; };
 		D81C12CCF04AF23300938DC5 /* Pods_OSXcompileTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSXcompileTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1ECACF22538E7A00B779B5 /* EVURLCache.framework in Frameworks */,
 				C65B38F18FC73826FCD2A7B6 /* Pods_EVURLCache.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +105,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ECDF9DD6ED38CDFCBAE4F3F /* Pods_OSXcompileTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE1ECAC522538E7A00B779B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +153,7 @@
 				7F4A0D6A1BEFE4F400059923 /* PreCache */,
 				7F4A0D4D1BEE481400059923 /* EVURLCache */,
 				7F4E25AB1C11A5C6009494A8 /* OSXcompileTest */,
+				BE1ECAC922538E7A00B779B5 /* EVURLCache-iOS */,
 				7F4A0D4C1BEE481400059923 /* Products */,
 				19413DFDF2B04B13ECBD1B5F /* Frameworks */,
 				62D28551C258F300F5E3DA2D /* Pods */,
@@ -123,6 +165,7 @@
 			children = (
 				7F4A0D4B1BEE481400059923 /* EVURLCache.app */,
 				7F4E25AA1C11A5C6009494A8 /* OSXcompileTest.xctest */,
+				BE1ECAC822538E7A00B779B5 /* EVURLCache.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,7 +203,27 @@
 			path = OSXcompileTest;
 			sourceTree = "<group>";
 		};
+		BE1ECAC922538E7A00B779B5 /* EVURLCache-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				BE1ECACA22538E7A00B779B5 /* EVURLCache_iOS.h */,
+				BE1ECACB22538E7A00B779B5 /* Info.plist */,
+			);
+			path = "EVURLCache-iOS";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BE1ECAC322538E7A00B779B5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE1ECACC22538E7A00B779B5 /* EVURLCache_iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		7F4A0D4A1BEE481400059923 /* EVURLCache */ = {
@@ -173,10 +236,12 @@
 				7F4A0D491BEE481400059923 /* Resources */,
 				ED5904373F15D0F0CB0655D5 /* 📦 Embed Pods Frameworks */,
 				3D41C5767D577AEF3868CAC5 /* 📦 Copy Pods Resources */,
+				BE1ECAD422538E7A00B779B5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BE1ECACE22538E7A00B779B5 /* PBXTargetDependency */,
 			);
 			name = EVURLCache;
 			productName = EVURLCache;
@@ -203,6 +268,24 @@
 			productReference = 7F4E25AA1C11A5C6009494A8 /* OSXcompileTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		BE1ECAC722538E7A00B779B5 /* EVURLCache-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE1ECAD322538E7A00B779B5 /* Build configuration list for PBXNativeTarget "EVURLCache-iOS" */;
+			buildPhases = (
+				BE1ECAC322538E7A00B779B5 /* Headers */,
+				BE1ECAC422538E7A00B779B5 /* Sources */,
+				BE1ECAC522538E7A00B779B5 /* Frameworks */,
+				BE1ECAC622538E7A00B779B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EVURLCache-iOS";
+			productName = "EVURLCache-iOS";
+			productReference = BE1ECAC822538E7A00B779B5 /* EVURLCache.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -221,6 +304,10 @@
 					7F4E25A91C11A5C6009494A8 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
+					BE1ECAC722538E7A00B779B5 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 7F4A0D461BEE481400059923 /* Build configuration list for PBXProject "EVURLCache" */;
@@ -238,6 +325,7 @@
 			targets = (
 				7F4A0D4A1BEE481400059923 /* EVURLCache */,
 				7F4E25A91C11A5C6009494A8 /* OSXcompileTest */,
+				BE1ECAC722538E7A00B779B5 /* EVURLCache-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -257,6 +345,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7F4E25A81C11A5C6009494A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE1ECAC622538E7A00B779B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -381,7 +476,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BE1ECAC422538E7A00B779B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE1ECAD622538E9D00B779B5 /* Reachability.swift in Sources */,
+				BE1ECAD522538E9B00B779B5 /* EVURLCache.swift in Sources */,
+				BE1ECAD722538EA000B779B5 /* EVURLProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE1ECACE22538E7A00B779B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE1ECAC722538E7A00B779B5 /* EVURLCache-iOS */;
+			targetProxy = BE1ECACD22538E7A00B779B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7F4A0D521BEE481400059923 /* Main.storyboard */ = {
@@ -507,7 +620,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CD76B9911492321A2FCCD8BE /* Pods-EVURLCache.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = NFYKDD8CR4;
 				INFOPLIST_FILE = EVURLCache/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -522,7 +637,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC5DD053A55845B5CAE6BBE2 /* Pods-EVURLCache.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = NFYKDD8CR4;
 				INFOPLIST_FILE = EVURLCache/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -563,6 +680,78 @@
 			};
 			name = Release;
 		};
+		BE1ECAD122538E7A00B779B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "EVURLCache-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evict.EVURLCache-iOS";
+				PRODUCT_NAME = EVURLCache;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BE1ECAD222538E7A00B779B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "EVURLCache-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evict.EVURLCache-iOS";
+				PRODUCT_NAME = EVURLCache;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -589,6 +778,15 @@
 			buildConfigurations = (
 				7F4E25AF1C11A5C6009494A8 /* Debug */,
 				7F4E25B01C11A5C6009494A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE1ECAD322538E7A00B779B5 /* Build configuration list for PBXNativeTarget "EVURLCache-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE1ECAD122538E7A00B779B5 /* Debug */,
+				BE1ECAD222538E7A00B779B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
