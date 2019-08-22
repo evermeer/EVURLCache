@@ -27,6 +27,7 @@
 @interface EVURLCache : NSURLCache
 
 +(void)activate;
++(void)setIgnoredMasks:(NSArray<NSString*>*)ignoredMasks;
 +(NSString*)storagePathForRequest:(NSURLRequest*)request;
 +(NSString*)storagePathForRequest:(NSURLRequest*)request rootPath:(NSString*)rootPath;
 

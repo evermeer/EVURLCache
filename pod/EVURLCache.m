@@ -14,6 +14,7 @@
 
 static NSString* _cacheDirectory;
 static NSString* _preCacheDirectory;
+static NSArray<NSString*>* _ignoredMasks;
 
 @implementation EVURLCache
 
@@ -32,6 +33,9 @@ static NSString* _preCacheDirectory;
     [NSURLCache setSharedURLCache:urlCache];
 }
 
++(void)setIgnoredMasks:(NSArray<NSString*>*)ignoredMasks {
+    _ignoredMasks = ignoredMasks;
+}
 
 // initializing the cache. Only used by the method above.
 -(id)initWithMemoryCapacity:(NSUInteger)memoryCapacity diskCapacity:(NSUInteger)diskCapacity diskPath:(NSString *)diskPath {
@@ -113,6 +117,10 @@ static NSString* _preCacheDirectory;
 // Will be called by NSURLConnection when a request is complete.
 -(void)storeCachedResponse:(NSCachedURLResponse*)cachedResponse forRequest:(nonnull NSURLRequest *)request
 {
+    if (![self shouldStoreCachedResponseForRequest:request]) {
+        return;
+    }
+
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) cachedResponse.response;
     if(httpResponse != nil && [httpResponse respondsToSelector:@selector(statusCode:)] && httpResponse.statusCode >= 400)
@@ -229,6 +237,28 @@ static NSString* _preCacheDirectory;
     localUrl = [localUrl stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
     
     return localUrl;
+}
+
+-(BOOL)shouldStoreCachedResponseForRequest:(nonnull NSURLRequest *)request
+{
+    for (NSString *mask in _ignoredMasks) {
+        NSError *error;
+        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:mask
+            options:NSRegularExpressionCaseInsensitive error:&error];
+
+        if (error) {
+            [EVURLCache log:@"Unable to parse ignored mask (%@)", error.localizedDescription];
+            break;
+        }
+
+        NSString *urlString = request.URL.absoluteString;
+
+        if ([regularExpression numberOfMatchesInString:urlString options:0 range:NSMakeRange(0, urlString.length)] > 0) {
+            return NO;
+        }
+    }
+
+    return YES;
 }
 
 +(BOOL)addSkipBackupAttributeToItemAtURL:(NSURL*)URL{
