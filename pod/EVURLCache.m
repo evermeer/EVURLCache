@@ -37,6 +37,28 @@ static NSArray<NSString*>* _ignoredMasks;
     _ignoredMasks = ignoredMasks;
 }
 
+-(BOOL)shouldIgnoreCachedResponseForRequest:(nonnull NSURLRequest *)request
+{
+    for (NSString *mask in _ignoredMasks) {
+        NSError *error;
+        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:mask
+            options:NSRegularExpressionCaseInsensitive error:&error];
+
+        if (error) {
+            [EVURLCache log:@"Unable to parse ignored mask (%@)", error.localizedDescription];
+            break;
+        }
+
+        NSString *urlString = request.URL.absoluteString;
+
+        if ([regularExpression numberOfMatchesInString:urlString options:0 range:NSMakeRange(0, urlString.length)] > 0) {
+            return YES;
+        }
+    }
+
+    return NO;
+}
+
 // initializing the cache. Only used by the method above.
 -(id)initWithMemoryCapacity:(NSUInteger)memoryCapacity diskCapacity:(NSUInteger)diskCapacity diskPath:(NSString *)diskPath {
     if ((self = [super initWithMemoryCapacity:memoryCapacity diskCapacity:diskCapacity diskPath:diskPath])) {
@@ -54,6 +76,12 @@ static NSArray<NSString*>* _ignoredMasks;
     if(request.URL.absoluteString.length == 0)
     {
         [EVURLCache log:@"CACHE not allowed for emtpy urls"];
+        return nil;
+    }
+    // If we have saved cache for given response before ignoring rule was set
+    if([self shouldIgnoreCachedResponseForRequest:request])
+    {
+        [EVURLCache log:@"CACHE ignored for %@", request.URL.absoluteString];
         return nil;
     }
     // is caching allowed
@@ -117,7 +145,7 @@ static NSArray<NSString*>* _ignoredMasks;
 // Will be called by NSURLConnection when a request is complete.
 -(void)storeCachedResponse:(NSCachedURLResponse*)cachedResponse forRequest:(nonnull NSURLRequest *)request
 {
-    if (![self shouldStoreCachedResponseForRequest:request]) {
+    if ([self shouldIgnoreCachedResponseForRequest:request]) {
         return;
     }
 
@@ -237,28 +265,6 @@ static NSArray<NSString*>* _ignoredMasks;
     localUrl = [localUrl stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
     
     return localUrl;
-}
-
--(BOOL)shouldStoreCachedResponseForRequest:(nonnull NSURLRequest *)request
-{
-    for (NSString *mask in _ignoredMasks) {
-        NSError *error;
-        NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:mask
-            options:NSRegularExpressionCaseInsensitive error:&error];
-
-        if (error) {
-            [EVURLCache log:@"Unable to parse ignored mask (%@)", error.localizedDescription];
-            break;
-        }
-
-        NSString *urlString = request.URL.absoluteString;
-
-        if ([regularExpression numberOfMatchesInString:urlString options:0 range:NSMakeRange(0, urlString.length)] > 0) {
-            return NO;
-        }
-    }
-
-    return YES;
 }
 
 +(BOOL)addSkipBackupAttributeToItemAtURL:(NSURL*)URL{
