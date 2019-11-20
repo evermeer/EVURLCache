@@ -37,18 +37,18 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 open class EVURLCache: URLCache {
 
-    open static var URLCACHE_CACHE_KEY = "MobileAppCacheKey" // Add this header variable to the response if you want to save the response using this key as the filename.
-    open static var MAX_AGE = "604800" // The default maximum age of a cached file in seconds. (1 week)
-    open static var PRE_CACHE_FOLDER = "PreCache"  // The folder in your app with the prefilled cache content
-    open static var CACHE_FOLDER = "Cache" // The folder in the Documents folder where cached files will be saved
-    open static var MAX_FILE_SIZE = 24 // The maximum file size that will be cached (2^24 = 16MB)
-    open static var MAX_CACHE_SIZE = 30 // The maximum file size that will be cached (2^30 = 256MB)
-    open static var LOGGING = false // Set this to true to see all caching action in the output log
-    open static var FORCE_LOWERCASE = true // Set this to false if you want to use case insensitive filename compare
-    open static var _cacheDirectory: String!
-    open static var _preCacheDirectory: String!
-    open static var RECREATE_CACHE_RESPONSE = true // There is a difrence between unarchiving and recreating. I have to find out what.
-    open static var IGNORE_CACHE_CONTROL = false // By default respect the cache control (and pragma) what is returned by the server
+    public static var URLCACHE_CACHE_KEY = "MobileAppCacheKey" // Add this header variable to the response if you want to save the response using this key as the filename.
+    public static var MAX_AGE = "604800" // The default maximum age of a cached file in seconds. (1 week)
+    public static var PRE_CACHE_FOLDER = "PreCache"  // The folder in your app with the prefilled cache content
+    public static var CACHE_FOLDER = "Cache" // The folder in the Documents folder where cached files will be saved
+    public static var MAX_FILE_SIZE = 24 // The maximum file size that will be cached (2^24 = 16MB)
+    public static var MAX_CACHE_SIZE = 30 // The maximum file size that will be cached (2^30 = 256MB)
+    public static var LOGGING = false // Set this to true to see all caching action in the output log
+    public static var FORCE_LOWERCASE = true // Set this to false if you want to use case insensitive filename compare
+    public static var _cacheDirectory: String!
+    public static var _preCacheDirectory: String!
+    public static var RECREATE_CACHE_RESPONSE = true // There is a difrence between unarchiving and recreating. I have to find out what.
+    public static var IGNORE_CACHE_CONTROL = false // By default respect the cache control (and pragma) what is returned by the server
     fileprivate static var _filter = { _ in return true } as ((_ request: URLRequest) -> Bool)
 
     // Activate EVURLCache
@@ -71,7 +71,7 @@ open class EVURLCache: URLCache {
     }
 
     // Log a message with info if enabled
-    open static func debugLog<T>(_ object: T, filename: String = #file, line: Int = #line, funcname: String = #function) {
+    public static func debugLog<T>(_ object: T, filename: String = #file, line: Int = #line, funcname: String = #function) {
         if LOGGING {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd/yyyy HH:mm:ss:SSS"
@@ -81,7 +81,7 @@ open class EVURLCache: URLCache {
         }
     }
     
-    open static func shouldRedirect(request: URLRequest) -> URL? {
+    public static func shouldRedirect(request: URLRequest) -> URL? {
         if let cache = EVURLCache.cachedResponse(for: request) {
             if (cache.response as? HTTPURLResponse)?.statusCode == 302 {
                 let headerFiels: [String:String] = (cache.response as? HTTPURLResponse)?.allHeaderFields as! [String : String]
@@ -97,7 +97,7 @@ open class EVURLCache: URLCache {
         return EVURLCache.cachedResponse(for: request)
     }
     
-    open static func cachedResponse(for request: URLRequest) -> CachedURLResponse? {
+    public static func cachedResponse(for request: URLRequest) -> CachedURLResponse? {
         guard let url = request.url else {
             EVURLCache.debugLog("CACHE not allowed for nil URLs")
             return nil
@@ -320,7 +320,7 @@ open class EVURLCache: URLCache {
     
     
     // return the path if the file for the request is in the PreCache or Cache.
-    open static func storagePathForRequest(_ request: URLRequest) -> String? {
+    public static func storagePathForRequest(_ request: URLRequest) -> String? {
         var storagePath: String? = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._cacheDirectory)
         if !FileManager.default.fileExists(atPath: storagePath ?? "") {
             storagePath = EVURLCache.storagePathForRequest(request, rootPath: EVURLCache._preCacheDirectory)
@@ -332,7 +332,7 @@ open class EVURLCache: URLCache {
     }
 
     // build up the complete storrage path for a request plus root folder.
-    open static func storagePathForRequest(_ request: URLRequest, rootPath: String) -> String? {
+    public static func storagePathForRequest(_ request: URLRequest, rootPath: String) -> String? {
         var localUrl: String = ""
         let host: String = request.url?.host ?? "default"
 
@@ -376,7 +376,7 @@ open class EVURLCache: URLCache {
         return localUrl.removingPercentEncoding
     }
     
-    open static func addSkipBackupAttributeToItemAtURL(_ url: URL) -> Bool {
+    public static func addSkipBackupAttributeToItemAtURL(_ url: URL) -> Bool {
         do {
             try (url as NSURL).setResourceValue(NSNumber(value: true as Bool), forKey: URLResourceKey.isExcludedFromBackupKey)
             return true
@@ -388,7 +388,7 @@ open class EVURLCache: URLCache {
     
     
     // Removes all files from _cacheDirectory with modification date more than MAX_AGE ago
-    open static func cleanExpiredCaches() {
+    public static func cleanExpiredCaches() {
         let defaultFileManager = FileManager.default
         
         let storagePath = EVURLCache._cacheDirectory
