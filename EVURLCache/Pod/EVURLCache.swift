@@ -43,16 +43,17 @@ open class EVURLCache: URLCache {
     public static var CACHE_FOLDER = "Cache" // The folder in the Documents folder where cached files will be saved
     public static var MAX_FILE_SIZE = 24 // The maximum file size that will be cached (2^24 = 16MB)
     public static var MAX_CACHE_SIZE = 30 // The maximum file size that will be cached (2^30 = 256MB)
-    public static var LOGGING = false // Set this to true to see all caching action in the output log
+    @objc public static var LOGGING = false // Set this to true to see all caching action in the output log
     public static var FORCE_LOWERCASE = true // Set this to false if you want to use case insensitive filename compare
     public static var _cacheDirectory: String!
     public static var _preCacheDirectory: String!
     public static var RECREATE_CACHE_RESPONSE = true // There is a difrence between unarchiving and recreating. I have to find out what.
     public static var IGNORE_CACHE_CONTROL = false // By default respect the cache control (and pragma) what is returned by the server
     fileprivate static var _filter = { _ in return true } as ((_ request: URLRequest) -> Bool)
+    fileprivate static var _ignoredMasks = [String]()
 
     // Activate EVURLCache
-    open class func activate() {
+    @objc open class func activate() {
         // set caching paths
         _cacheDirectory = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]).appendingPathComponent(CACHE_FOLDER).absoluteString
         _preCacheDirectory = URL(fileURLWithPath: Bundle.main.resourcePath!).appendingPathComponent(PRE_CACHE_FOLDER).absoluteString
@@ -68,6 +69,27 @@ open class EVURLCache: URLCache {
 
     open class func filter (_ filterFor: @escaping ((_ request: URLRequest) -> Bool)) {
         _filter = filterFor
+    }
+
+    @objc open class func setIgnoredMasks(_ masks: [String]) {
+        _ignoredMasks = masks
+    }
+
+    fileprivate class func shouldIgnoreCachedResponse(for request: URLRequest) -> Bool {
+        for mask in _ignoredMasks {
+            do {
+                let regularExpression = try NSRegularExpression(pattern: mask, options: .caseInsensitive)
+                let urlString = request.url?.absoluteString
+
+                if (regularExpression.numberOfMatches(in: urlString ?? "", options: [], range: NSRange(location: 0, length: urlString?.count ?? 0))) > 0 {
+                    return true
+                }
+            } catch {
+                EVURLCache.debugLog("Unable to parse ignored mask (\(error.localizedDescription))")
+            }
+        }
+
+        return false
     }
 
     // Log a message with info if enabled
@@ -110,6 +132,11 @@ open class EVURLCache: URLCache {
         
         if !EVURLCache._filter(request) {
             EVURLCache.debugLog("CACHE skipped because of filter")
+            return nil
+        }
+
+        if shouldIgnoreCachedResponse(for: request) {
+            EVURLCache.debugLog("CACHE ignored for \(url.absoluteString)")
             return nil
         }
 
@@ -195,6 +222,10 @@ open class EVURLCache: URLCache {
     
     // Will be called by NSURLConnection when a request is complete.
     open override func storeCachedResponse(_ cachedResponse: CachedURLResponse, for request: URLRequest) {
+
+        if EVURLCache.shouldIgnoreCachedResponse(for: request) {
+            return
+        }
 
         // errors are never cached
         if let httpResponse = cachedResponse.response as? HTTPURLResponse {
